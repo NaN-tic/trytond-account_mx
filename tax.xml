@@ -1,0 +1,316 @@
+<?xml version='1.0'?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data grouped="1">
+        <record model="account.tax.group" id="tax_group_sale">
+            <field name="name">Ventas</field>
+            <field name="code">Ventas</field>
+            <field name="kind">sale</field>
+        </record>
+        <record model="account.tax.group" id="tax_group_purchase">
+            <field name="name">Compras</field>
+            <field name="code">Compras</field>
+            <field name="kind">purchase</field>
+        </record>
+    </data>
+    <data grouped="1">
+        <record model="account.tax.code.template" id="iva_dev_01_16">
+            <field name="name">Base IVA Devengado 16%</field>
+            <field name="account" ref="pc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="iva_dev_02_16">
+            <field name="name">Cuota IVA Devengado 16%</field>
+            <field name="account" ref="pc_0"/>
+        </record>
+
+        <record model="account.tax.code.template" id="iva_dev_01_0">
+            <field name="name">Base IVA Devengado 0%</field>
+            <field name="account" ref="pc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="iva_dev_02_0">
+            <field name="name">Cuota IVA Devengado 0%</field>
+            <field name="account" ref="pc_0"/>
+        </record>
+
+        <record model="account.tax.code.template" id="iva_dev_01_exc">
+            <field name="name">Base IVA Devengado Excento</field>
+            <field name="account" ref="pc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="iva_dev_02_exc">
+            <field name="name">Cuota IVA Devengado Excento</field>
+            <field name="account" ref="pc_0"/>
+        </record>
+
+        <record model="account.tax.code.template" id="iva_sop_01_16">
+            <field name="name">Base IVA Soportado 16%</field>
+            <field name="account" ref="pc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="iva_sop_02_16">
+            <field name="name">Cuota IVA Soportado 16%</field>
+            <field name="account" ref="pc_0"/>
+        </record>
+
+        <record model="account.tax.code.template" id="iva_sop_01_0">
+            <field name="name">Base IVA Soportado 0%</field>
+            <field name="account" ref="pc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="iva_sop_02_0">
+            <field name="name">Cuota IVA Soportado 0%</field>
+            <field name="account" ref="pc_0"/>
+        </record>
+
+        <record model="account.tax.code.template" id="iva_sop_01_exc">
+            <field name="name">Base IVA Soportado Excento</field>
+            <field name="account" ref="pc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="iva_sop_02_exc">
+            <field name="name">Cuota IVA Soportado Excento</field>
+            <field name="account" ref="pc_0"/>
+        </record>
+    </data>
+    <data grouped="1">
+        <record model="account.tax.template" id="iva_rep_16"> <!-- Venta -->
+            <field name="name">IVA 16%</field>
+            <field name="description">IVA 16%</field>
+            <field name="account" ref="pc_0"/>
+            <field name="group" ref="tax_group_sale"/>
+            <field name="type">percentage</field>
+            <field name="rate" eval="Decimal('0.16')"/>
+            <field name="invoice_account" ref="pg_209_01"/>
+            <field name="credit_note_account" ref="pg_209_01"/>
+            <field name="sequence" eval="1000"/>
+        </record>
+        <record model="account.tax.template" id="iva_rep_0"> <!-- Veta -->
+            <field name="name">IVA 0%</field>
+            <field name="description">IVA Excento</field>
+            <field name="account" ref="pc_0"/>
+            <field name="group" ref="tax_group_sale"/>
+            <field name="type">percentage</field>
+            <field name="rate" eval="Decimal('0.0')"/>
+            <field name="invoice_account" ref="pg_209_01"/>
+            <field name="credit_note_account" ref="pg_209_01"/>
+            <field name="sequence" eval="1000"/>
+        </record>
+        <record model="account.tax.template" id="iva_rep_exc"> <!-- Venta -->
+            <field name="name">IVA Excento</field>
+            <field name="description">IVA Excento</field>
+            <field name="account" ref="pc_0"/>
+            <field name="group" ref="tax_group_sale"/>
+            <field name="type">percentage</field>
+            <field name="rate" eval="Decimal('0.0')"/>
+            <field name="invoice_account" ref="pg_209_01"/>
+            <field name="credit_note_account" ref="pg_209_01"/>
+            <field name="sequence" eval="1000"/>
+        </record>
+
+        <record model="account.tax.template" id="iva_sop_16">
+            <field name="name">IVA 16%</field>
+            <field name="description">IVA 16%</field>
+            <field name="account" ref="pc_0"/>
+            <field name="group" ref="tax_group_sale"/>
+            <field name="type">percentage</field>
+            <field name="rate" eval="Decimal('0.16')"/>
+            <field name="invoice_account" ref="pg_119_01"/>
+            <field name="credit_note_account" ref="pg_119_01"/>
+            <field name="sequence" eval="1000"/>
+        </record>
+        <record model="account.tax.template" id="iva_sop_0">
+            <field name="name">IVA 0%</field>
+            <field name="description">IVA Excento</field>
+            <field name="account" ref="pc_0"/>
+            <field name="group" ref="tax_group_sale"/>
+            <field name="type">percentage</field>
+            <field name="rate" eval="Decimal('0.0')"/>
+            <field name="invoice_account" ref="pg_119_01"/>
+            <field name="credit_note_account" ref="pg_119_01"/>
+            <field name="sequence" eval="1000"/>
+        </record>
+        <record model="account.tax.template" id="iva_sop_exc">
+            <field name="name">IVA Excento</field>
+            <field name="description">IVA Excento</field>
+            <field name="account" ref="pc_0"/>
+            <field name="group" ref="tax_group_sale"/>
+            <field name="type">percentage</field>
+            <field name="rate" eval="Decimal('0.0')"/>
+            <field name="invoice_account" ref="pg_119_01"/>
+            <field name="credit_note_account" ref="pg_119_01"/>
+            <field name="sequence" eval="1000"/>
+        </record>
+    </data>
+    <data grouped="1">
+        <record model="account.tax.code.line.template" id="iva_rep_16-iva_dev_01_16-invoice-base">
+            <field name="code" ref="iva_dev_01_16"/>
+            <field name="tax" ref="iva_rep_16"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_rep_16-iva_dev_01_16-credit-base">
+            <field name="code" ref="iva_dev_01_16"/>
+            <field name="tax" ref="iva_rep_16"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_rep_16-iva_dev_02_16-invoice-tax">
+            <field name="code" ref="iva_dev_02_16"/>
+            <field name="tax" ref="iva_rep_16"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">tax</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_rep_16-iva_dev_02_16-credit-tax">
+            <field name="code" ref="iva_dev_02_16"/>
+            <field name="tax" ref="iva_rep_16"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">tax</field>
+        </record>
+
+        <record model="account.tax.code.line.template" id="iva_rep_0-iva_dev_01_0-invoice-base">
+            <field name="code" ref="iva_dev_01_0"/>
+            <field name="tax" ref="iva_rep_0"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_rep_0-iva_dev_01_0-credit-base">
+            <field name="code" ref="iva_dev_01_0"/>
+            <field name="tax" ref="iva_rep_0"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_rep_0-iva_dev_02_0-invoice-tax">
+            <field name="code" ref="iva_dev_02_0"/>
+            <field name="tax" ref="iva_rep_0"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">tax</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_rep_0-iva_dev_02_0-credit-tax">
+            <field name="code" ref="iva_dev_02_0"/>
+            <field name="tax" ref="iva_rep_0"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">tax</field>
+        </record>
+
+        <record model="account.tax.code.line.template" id="iva_rep_exc-iva_dev_01_exc-invoice-base">
+            <field name="code" ref="iva_dev_01_exc"/>
+            <field name="tax" ref="iva_rep_exc"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_rep_exc-iva_dev_01_exc-credit-base">
+            <field name="code" ref="iva_dev_01_exc"/>
+            <field name="tax" ref="iva_rep_exc"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_rep_exc-iva_dev_02_exc-invoice-tax">
+            <field name="code" ref="iva_dev_02_exc"/>
+            <field name="tax" ref="iva_rep_exc"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">tax</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_rep_exc-iva_dev_02_exc-credit-tax">
+            <field name="code" ref="iva_dev_02_exc"/>
+            <field name="tax" ref="iva_rep_exc"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">tax</field>
+        </record>
+
+        <record model="account.tax.code.line.template" id="iva_sop_16-iva_sop_01_16-invoice-base">
+            <field name="code" ref="iva_sop_01_16"/>
+            <field name="tax" ref="iva_sop_16"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_sop_16-iva_sop_01_16-credit-base">
+            <field name="code" ref="iva_sop_01_16"/>
+            <field name="tax" ref="iva_sop_16"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_sop_16-iva_sop_02_16-invoice-tax">
+            <field name="code" ref="iva_sop_02_16"/>
+            <field name="tax" ref="iva_sop_16"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">tax</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_sop_16-iva_sop_02_16-credit-tax">
+            <field name="code" ref="iva_sop_02_16"/>
+            <field name="tax" ref="iva_sop_16"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">tax</field>
+        </record>
+
+        <record model="account.tax.code.line.template" id="iva_sop_0-iva_sop_01_0-invoice-base">
+            <field name="code" ref="iva_sop_01_0"/>
+            <field name="tax" ref="iva_sop_0"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_sop_0-iva_sop_01_0-credit-base">
+            <field name="code" ref="iva_sop_01_0"/>
+            <field name="tax" ref="iva_sop_0"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_sop_0-iva_sop_02_0-invoice-tax">
+            <field name="code" ref="iva_sop_02_0"/>
+            <field name="tax" ref="iva_sop_0"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">tax</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_sop_0-iva_sop_02_0-credit-tax">
+            <field name="code" ref="iva_sop_02_0"/>
+            <field name="tax" ref="iva_sop_0"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">tax</field>
+        </record>
+
+        <record model="account.tax.code.line.template" id="iva_sop_exc-iva_sop_01_exc-invoice-base">
+            <field name="code" ref="iva_sop_01_exc"/>
+            <field name="tax" ref="iva_sop_exc"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_sop_exc-iva_sop_01_exc-credit-base">
+            <field name="code" ref="iva_sop_01_exc"/>
+            <field name="tax" ref="iva_sop_exc"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_sop_exc-iva_sop_02_exc-invoice-tax">
+            <field name="code" ref="iva_sop_02_exc"/>
+            <field name="tax" ref="iva_sop_exc"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">tax</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_sop_exc-iva_sop_02_exc-credit-tax">
+            <field name="code" ref="iva_sop_02_exc"/>
+            <field name="tax" ref="iva_sop_exc"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">tax</field>
+        </record>
+    </data>
+</tryton>
