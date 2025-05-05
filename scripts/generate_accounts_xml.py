@@ -16,6 +16,7 @@ parent_accounts = {}
 
 parent_accounts_to_print = []
 child_accounts_to_print = []
+child_child_accounts_to_print = []
 
 # This dictionary handles the type accounts
 type_dict = {
@@ -73,11 +74,28 @@ for row in ws.rows:
             f'\n    <field name="party_required" eval="False"/>'
             '\n</record>')
     else:
-        # Compte "personalitzat, saltar"
-        continue
+        type_record = type_dict.get(type)
+        if not type_record:
+            print(f'-- ERROR: Type {type} not found for account: {code} - {name}')
+            raise
+        # Compte "personalitzat"
+        account_code = 'pg_' + code.replace('-', '_')
+        parent = None
+        parent_code = 'pg_' + code[:6].replace('-', '_')
+        child_child_accounts_to_print.append(
+            f'<record model="account.account.template" id="{account_code}">'
+            f'\n    <field name="name">{name}</field>'
+            f'\n    <field name="type" ref="{type_record}"/>'
+            f'\n    <field name="parent" ref="{parent_code}"/>'
+            f'\n    <field name="code">{code}</field>'
+            f'\n    <field name="party_required" eval="False"/>'
+            '\n</record>')
 
-for parent_account in parent_accounts_to_print:
-    print(parent_account)
+#for parent_account in parent_accounts_to_print:
+#    print(parent_account)
 
 #for child_account in child_accounts_to_print:
 #    print(child_account)
+
+for child_child_account in child_child_accounts_to_print:
+    print(child_child_account)
