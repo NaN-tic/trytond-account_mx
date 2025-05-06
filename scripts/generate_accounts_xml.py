@@ -40,10 +40,10 @@ for row in ws.rows:
     name = row[2].value
 
     if code.endswith('-00-000'):
-        type_record = type_dict.get(type)
-        if not type_record:
-            print(f'-- ERROR: Type {type} not found for account: {code} - {name}')
-            raise
+        #type_record = type_dict.get(type)
+        #if not type_record:
+        #    print(f'-- ERROR: Type {type} not found for account: {code} - {name}')
+        #    raise
         # Compte "pare"
         account_code = 'pg_' + code[:6].replace('-', '_')
         parent_accounts[code[:6]] = account_code
@@ -51,7 +51,6 @@ for row in ws.rows:
         parent_accounts_to_print.append(
             f'<record model="account.account.template" id="{account_code}">'
             f'\n    <field name="name">{name}</field>'
-            f'\n    <field name="type" ref="{type_record}"/>'
             f'\n    <field name="parent" ref="{parent}"/>'
             f'\n    <field name="code">{code}</field>'
             f'\n    <field name="party_required" eval="False"/>'
@@ -91,11 +90,11 @@ for row in ws.rows:
             f'\n    <field name="party_required" eval="False"/>'
             '\n</record>')
 
-#for parent_account in parent_accounts_to_print:
-#    print(parent_account)
+for parent_account in parent_accounts_to_print:
+    print(parent_account)
 
 #for child_account in child_accounts_to_print:
 #    print(child_account)
 
-for child_child_account in child_child_accounts_to_print:
-    print(child_child_account)
+#for child_child_account in child_child_accounts_to_print:
+#    print(child_child_account)

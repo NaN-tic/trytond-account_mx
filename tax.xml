@@ -13,6 +13,11 @@ this repository contains the full copyright notices and license terms. -->
             <field name="code">Compras</field>
             <field name="kind">purchase</field>
         </record>
+        <record model="account.tax.group" id="tax_group_both">
+            <field name="name">Ambos</field>
+            <field name="code">Ambos</field>
+            <field name="kind">both</field>
+        </record>
     </data>
     <data grouped="1">
         <record model="account.tax.code.template" id="iva_dev_01_16">
@@ -108,7 +113,7 @@ this repository contains the full copyright notices and license terms. -->
             <field name="name">IVA 16%</field>
             <field name="description">IVA 16%</field>
             <field name="account" ref="pc_0"/>
-            <field name="group" ref="tax_group_sale"/>
+            <field name="group" ref="tax_group_purchase"/>
             <field name="type">percentage</field>
             <field name="rate" eval="Decimal('0.16')"/>
             <field name="invoice_account" ref="pg_119_01"/>
@@ -119,7 +124,7 @@ this repository contains the full copyright notices and license terms. -->
             <field name="name">IVA 0%</field>
             <field name="description">IVA Excento</field>
             <field name="account" ref="pc_0"/>
-            <field name="group" ref="tax_group_sale"/>
+            <field name="group" ref="tax_group_purchase"/>
             <field name="type">percentage</field>
             <field name="rate" eval="Decimal('0.0')"/>
             <field name="invoice_account" ref="pg_119_01"/>
@@ -130,7 +135,7 @@ this repository contains the full copyright notices and license terms. -->
             <field name="name">IVA Excento</field>
             <field name="description">IVA Excento</field>
             <field name="account" ref="pc_0"/>
-            <field name="group" ref="tax_group_sale"/>
+            <field name="group" ref="tax_group_purchase"/>
             <field name="type">percentage</field>
             <field name="rate" eval="Decimal('0.0')"/>
             <field name="invoice_account" ref="pg_119_01"/>
@@ -311,6 +316,49 @@ this repository contains the full copyright notices and license terms. -->
             <field name="operator">-</field>
             <field name="type">credit</field>
             <field name="amount">tax</field>
+        </record>
+    </data>
+    <data grouped="1">
+        <record model="account.tax.rule.template" id="tax_rule_iva_nac">
+            <field name="name">IVA Nacional</field>
+            <field name="account" ref="pc_0"/>
+            <field name="kind">both</field>
+        </record>
+        <record model="account.tax.rule.template" id="tax_rule_iva_exec">
+            <field name="name">IVA Exento</field>
+            <field name="account" ref="pc_0"/>
+            <field name="kind">both</field>
+        </record>
+        <record model="account.tax.rule.template" id="tax_rule_iva_0">
+            <field name="name">IVA 0</field>
+            <field name="account" ref="pc_0"/>
+            <field name="kind">both</field>
+        </record>
+    </data>
+    <data grouped="1">
+        <record model="account.tax.rule.line.template" id="fptt_exento_1">
+            <field name="rule" ref="tax_rule_iva_exec"/>
+            <field name="origin_tax" ref="iva_sop_16"/>
+            <field name="tax" ref="iva_sop_exc"/>
+            <field name="group" ref="tax_group_purchase"/>
+        </record>
+        <record model="account.tax.rule.line.template" id="fptt_exento_2">
+            <field name="rule" ref="tax_rule_iva_exec"/>
+            <field name="origin_tax" ref="iva_sop_0"/>
+            <field name="tax" ref="iva_sop_exc"/>
+            <field name="group" ref="tax_group_purchase"/>
+        </record>
+        <record model="account.tax.rule.line.template" id="fptt_exento_3">
+            <field name="rule" ref="tax_rule_iva_exec"/>
+            <field name="origin_tax" ref="iva_rep_16"/>
+            <field name="tax" ref="iva_rep_exc"/>
+            <field name="group" ref="tax_group_sale"/>
+        </record>
+        <record model="account.tax.rule.line.template" id="fptt_exento_4">
+            <field name="rule" ref="tax_rule_iva_exec"/>
+            <field name="origin_tax" ref="iva_rep_0"/>
+            <field name="tax" ref="iva_rep_exc"/>
+            <field name="group" ref="tax_group_sale"/>
         </record>
     </data>
 </tryton>

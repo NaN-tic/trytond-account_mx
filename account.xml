@@ -64,854 +64,732 @@ this repository contains the full copyright notices and license terms. -->
     <data grouped="1">
         <record model="account.account.template" id="pg_101_00">
             <field name="name">Caja</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">101-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_102_00">
             <field name="name">Bancos</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">102-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_103_00">
             <field name="name">Inversiones</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">103-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_104_00">
             <field name="name">Otros instrumentos financieros</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">104-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_105_00">
             <field name="name">Clientes</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">105-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_106_00">
             <field name="name">Ctas y doctos x cobrar a corto plazo</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">106-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_107_00">
             <field name="name">Deudores diversos</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">107-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_108_00">
             <field name="name">Estimación de cuentas incobrables</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">108-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_109_00">
             <field name="name">Pagos anticipados</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">109-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_110_00">
             <field name="name">Subsidio al empleo por aplicar</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">110-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_111_00">
             <field name="name">Crédito al diesel por acreditar</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">111-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_112_00">
             <field name="name">Otros estímulos</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">112-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_113_00">
             <field name="name">Impuestos a favor</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">113-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_114_00">
             <field name="name">Pagos provisionales</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">114-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_115_00">
             <field name="name">Inventario</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">115-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_116_00">
             <field name="name">Estimación de inv obsoletos y de lento movto</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">116-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_117_00">
             <field name="name">Obras en proceso de inmuebles</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">117-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_118_00">
             <field name="name">Impuestos acreditables pagados</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">118-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_119_00">
             <field name="name">Impuestos acreditables por pagar</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">119-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_120_00">
             <field name="name">Anticipo a proveedores</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">120-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_121_00">
             <field name="name">Otros activos a corto plazo</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">121-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_151_00">
             <field name="name">Terrenos</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">151-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_152_00">
             <field name="name">Edificios</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">152-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_153_00">
             <field name="name">Maquinaria y equipo</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">153-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_154_00">
             <field name="name">Automóviles, autobuses, camiones de carga</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">154-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_155_00">
             <field name="name">Mobiliario y equipo de oficina</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">155-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_156_00">
             <field name="name">Equipo de cómputo</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">156-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_157_00">
             <field name="name">Equipo de comunicación</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">157-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_158_00">
             <field name="name">Activos biológicos, vegetales y semovientes</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">158-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_159_00">
             <field name="name">Obras en proceso de activos fijos</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">159-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_160_00">
             <field name="name">Otros activos fijos</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">160-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_161_00">
             <field name="name">Ferrocariles</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">161-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_162_00">
             <field name="name">Embarcaciones</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">162-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_163_00">
             <field name="name">Aviones</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">163-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_164_00">
             <field name="name">Troqueles, moldes, matrices y herramental</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">164-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_165_00">
             <field name="name">Equipo de comunicaciones telefónicas</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">165-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_166_00">
             <field name="name">Equipo de comunicación satelital</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">166-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_167_00">
             <field name="name">Eq de adaptaciones para personas con capac dif</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">167-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_168_00">
             <field name="name">Maq y eq de generación de energía de ftes renov</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">168-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_169_00">
             <field name="name">Otra maquinaria y equipo</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">169-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_170_00">
             <field name="name">Adaptaciones y mejoras</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">170-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_171_00">
             <field name="name">Depreciación acumulada de activos fijos</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">171-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_172_00">
             <field name="name">Pérdida x deterioro acum de activos fijos</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">172-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_173_00">
             <field name="name">Gastos diferidos</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">173-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_174_00">
             <field name="name">Gastos pre operativos</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">174-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_175_00">
             <field name="name">Regalías, asistencia técnica y otros gtos dif</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">175-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_176_00">
             <field name="name">Activos intangibles</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">176-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_177_00">
             <field name="name">Gastos de organización</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">177-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_178_00">
             <field name="name">Investigación y desarrollo de mercado</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">178-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_179_00">
             <field name="name">Marcas y patentes</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">179-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_180_00">
             <field name="name">Crédito mercantil</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">180-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_181_00">
             <field name="name">Gastos de instalación</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">181-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_182_00">
             <field name="name">Otros activos diferidos</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">182-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_183_00">
             <field name="name">Amortización acumulada de activos diferidos</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">183-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_184_00">
             <field name="name">Depósitos en garantía</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">184-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_185_00">
             <field name="name">Impuestos diferidos</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">185-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_186_00">
             <field name="name">Cuentas y documentos por cobrar a largo plazo</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">186-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_187_00">
             <field name="name">Part de los trabajadores en las utilidades dif</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">187-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_188_00">
             <field name="name">Inversiones permanentes en acciones</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">188-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_189_00">
             <field name="name">Estim x deterioro de inv permanentes en acciones</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">189-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_190_00">
             <field name="name">Otros instrumentos financieros</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">190-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_191_00">
             <field name="name">Otros activos a largo plazo</field>
-            <field name="type" ref="mx_01"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">191-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_201_00">
             <field name="name">Proveedores</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">201-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_202_00">
             <field name="name">Cuentas por pagar a corto plazo</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">202-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_203_00">
             <field name="name">Cobros anticipados a corto plazo</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">203-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_204_00">
             <field name="name">Instrumentos financieros a corto plazo</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">204-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_205_00">
             <field name="name">Acreedores diversos a corto plazo</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">205-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_206_00">
             <field name="name">Anticipo de cliente</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">206-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_207_00">
             <field name="name">Impuestos trasladados</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">207-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_208_00">
             <field name="name">Impuestos trasladados cobrados</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">208-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_209_00">
             <field name="name">Impuestos trasladados no cobrados</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">209-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_210_00">
             <field name="name">Provisión de sueldos y salarios x pagar</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">210-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_211_00">
             <field name="name">Provisión de contribuciones segsocial x pagar</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">211-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_212_00">
             <field name="name">Provisión de imoto estatal s nómina x pagar</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">212-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_213_00">
             <field name="name">Impuestos y derechos por pagar</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">213-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_214_00">
             <field name="name">Dividendos por pagar</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">214-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_215_00">
             <field name="name">PTU por pagar</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">215-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_216_00">
             <field name="name">Impuestos retenidos</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">216-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_217_00">
             <field name="name">Pagos realizados x cta de terceros</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">217-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_218_00">
             <field name="name">Otros pasivos a corto plazo</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">218-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_251_00">
             <field name="name">Acreedores diversos a largo plazo</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">251-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_252_00">
             <field name="name">Cuentas por pagar a largo plazo</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">252-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_253_00">
             <field name="name">Cobros anticipados a largo plazo</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">253-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_254_00">
             <field name="name">Instrumentos financieros a largo plazo</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">254-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_255_00">
             <field name="name">Pasivos por benefi a empleados go plzo</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">255-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_256_00">
             <field name="name">Otros pasivos a largo plazo</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">256-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_257_00">
             <field name="name">Participación de los trabaj en util dif</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">257-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_258_00">
             <field name="name">Obligaciones contraídas de fideicomisos</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">258-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_259_00">
             <field name="name">Impuestos diferidos</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">259-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_260_00">
             <field name="name">Pasivos diferidos</field>
-            <field name="type" ref="mx_02"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">260-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_301_00">
             <field name="name">Capital Social</field>
-            <field name="type" ref="mx_03"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">301-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_302_00">
             <field name="name">Patrimonio</field>
-            <field name="type" ref="mx_03"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">302-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_303_00">
             <field name="name">Reserva legal</field>
-            <field name="type" ref="mx_03"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">303-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_304_00">
             <field name="name">Resultado de ejercicios anteriores</field>
-            <field name="type" ref="mx_03"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">304-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_305_00">
             <field name="name">Resultado del ejercicio</field>
-            <field name="type" ref="mx_03"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">305-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_306_00">
             <field name="name">Otras cuentas de capital</field>
-            <field name="type" ref="mx_03"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">306-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_401_00">
             <field name="name">Ingresos</field>
-            <field name="type" ref="mx_04"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">401-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_402_00">
             <field name="name">Dev, descuentos o bonif sobre ingresos</field>
-            <field name="type" ref="mx_04"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">402-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_403_00">
             <field name="name">Otros ingresos</field>
-            <field name="type" ref="mx_04"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">403-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_501_00">
             <field name="name">Costos de venta y/o servicio</field>
-            <field name="type" ref="mx_05"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">501-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_502_00">
             <field name="name">Compras</field>
-            <field name="type" ref="mx_05"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">502-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_503_00">
             <field name="name">Devoluciones, destos o bonif s compras</field>
-            <field name="type" ref="mx_05"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">503-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_504_00">
             <field name="name">Otras cuentas de costos</field>
-            <field name="type" ref="mx_05"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">504-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_505_00">
             <field name="name">Costo de activo fijo</field>
-            <field name="type" ref="mx_05"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">505-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_601_00">
             <field name="name">Gastos generales</field>
-            <field name="type" ref="mx_06"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">601-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_602_00">
             <field name="name">Gastos de venta</field>
-            <field name="type" ref="mx_06"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">602-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_603_00">
             <field name="name">Gastos de administración</field>
-            <field name="type" ref="mx_06"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">603-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_604_00">
             <field name="name">Gastos de fabricación</field>
-            <field name="type" ref="mx_06"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">604-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_605_00">
             <field name="name">Mano de obra directa</field>
-            <field name="type" ref="mx_06"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">605-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_606_00">
             <field name="name">Facilidades administrativas fiscales</field>
-            <field name="type" ref="mx_06"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">606-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_607_00">
             <field name="name">Participación de los trabaj en las utilidades</field>
-            <field name="type" ref="mx_06"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">607-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_608_00">
             <field name="name">Participación en resultados de subsidiarias</field>
-            <field name="type" ref="mx_06"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">608-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_609_00">
             <field name="name">Participación en resultados de asociadas</field>
-            <field name="type" ref="mx_06"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">609-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_610_00">
             <field name="name">Participación de los trabaj en utilidades dif</field>
-            <field name="type" ref="mx_06"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">610-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_611_00">
             <field name="name">Impuesto Sobre la renta</field>
-            <field name="type" ref="mx_06"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">611-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_612_00">
             <field name="name">Gastos no deducibles para CUFIN</field>
-            <field name="type" ref="mx_06"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">612-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_613_00">
             <field name="name">Depreciacion Contable</field>
-            <field name="type" ref="mx_06"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">613-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_614_00">
             <field name="name">Amortización contable</field>
-            <field name="type" ref="mx_06"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">614-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_701_00">
             <field name="name">Gastos financieros</field>
-            <field name="type" ref="mx_07"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">701-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_702_00">
             <field name="name">Productos financieros</field>
-            <field name="type" ref="mx_07"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">702-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_703_00">
             <field name="name">Otros gastos</field>
-            <field name="type" ref="mx_07"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">703-00-000</field>
             <field name="party_required" eval="False"/>
         </record>
         <record model="account.account.template" id="pg_704_00">
             <field name="name">Otros productos</field>
-            <field name="type" ref="mx_07"/>
             <field name="parent" ref="pc_0"/>
             <field name="code">704-00-000</field>
             <field name="party_required" eval="False"/>
