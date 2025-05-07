@@ -360,5 +360,29 @@ this repository contains the full copyright notices and license terms. -->
             <field name="tax" ref="iva_rep_exc"/>
             <field name="group" ref="tax_group_sale"/>
         </record>
+        <record model="account.tax.rule.line.template" id="fptt_0_1">
+            <field name="rule" ref="tax_rule_iva_0"/>
+            <field name="origin_tax" ref="iva_sop_16"/>
+            <field name="tax" ref="iva_sop_0"/>
+            <field name="group" ref="tax_group_purchase"/>
+        </record>
+        <record model="account.tax.rule.line.template" id="fptt_0_2">
+            <field name="rule" ref="tax_rule_iva_0"/>
+            <field name="origin_tax" ref="iva_sop_exc"/>
+            <field name="tax" ref="iva_sop_0"/>
+            <field name="group" ref="tax_group_purchase"/>
+        </record>
+        <record model="account.tax.rule.line.template" id="fptt_0_3">
+            <field name="rule" ref="tax_rule_iva_0"/>
+            <field name="origin_tax" ref="iva_rep_16"/>
+            <field name="tax" ref="iva_rep_0"/>
+            <field name="group" ref="tax_group_sale"/>
+        </record>
+        <record model="account.tax.rule.line.template" id="fptt_0_4">
+            <field name="rule" ref="tax_rule_iva_0"/>
+            <field name="origin_tax" ref="iva_rep_exc"/>
+            <field name="tax" ref="iva_rep_0"/>
+            <field name="group" ref="tax_group_sale"/>
+        </record>
     </data>
 </tryton>
