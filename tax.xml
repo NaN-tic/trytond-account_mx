@@ -223,8 +223,8 @@ this repository contains the full copyright notices and license terms. -->
             <field name="group" ref="tax_group_sale"/>
             <field name="type">percentage</field>
             <field name="rate" eval="Decimal('-0.0125')"/>
-            <field name="invoice_account" ref="pg_216_00"/>
-            <field name="credit_note_account" ref="pg_216_00"/>
+            <field name="invoice_account" ref="pg_216_04"/>
+            <field name="credit_note_account" ref="pg_216_04"/>
             <field name="sequence" eval="1000"/>
         </record>
 
@@ -257,8 +257,8 @@ this repository contains the full copyright notices and license terms. -->
             <field name="group" ref="tax_group_purchase"/>
             <field name="type">percentage</field>
             <field name="rate" eval="Decimal('-0.0125')"/>
-            <field name="invoice_account" ref="pg_216_00"/>
-            <field name="credit_note_account" ref="pg_216_00"/>
+            <field name="invoice_account" ref="pg_216_04"/>
+            <field name="credit_note_account" ref="pg_216_04"/>
             <field name="sequence" eval="1000"/>
         </record>
     </data>
