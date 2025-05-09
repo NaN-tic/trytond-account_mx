@@ -211,7 +211,7 @@ this repository contains the full copyright notices and license terms. -->
             <field name="account" ref="pc_0"/>
             <field name="group" ref="tax_group_sale"/>
             <field name="type">percentage</field>
-            <field name="rate" eval="Decimal('-0.0')"/>
+            <field name="rate" eval="Decimal('-0.1067')"/>
             <field name="invoice_account" ref="pg_216_10"/>
             <field name="credit_note_account" ref="pg_216_10"/>
             <field name="sequence" eval="1000"/>
@@ -245,7 +245,7 @@ this repository contains the full copyright notices and license terms. -->
             <field name="account" ref="pc_0"/>
             <field name="group" ref="tax_group_purchase"/>
             <field name="type">percentage</field>
-            <field name="rate" eval="Decimal('-0.0')"/>
+            <field name="rate" eval="Decimal('-0.1067')"/>
             <field name="invoice_account" ref="pg_216_10"/>
             <field name="credit_note_account" ref="pg_216_10"/>
             <field name="sequence" eval="1000"/>
@@ -644,18 +644,6 @@ this repository contains the full copyright notices and license terms. -->
             <field name="tax" ref="iva_sop_exc"/>
             <field name="group" ref="tax_group_purchase"/>
         </record>
-        <record model="account.tax.rule.line.template" id="fptt_exento_3">
-            <field name="rule" ref="tax_rule_iva_exec"/>
-            <field name="origin_tax" ref="iva_rep_16"/>
-            <field name="tax" ref="iva_rep_exc"/>
-            <field name="group" ref="tax_group_sale"/>
-        </record>
-        <record model="account.tax.rule.line.template" id="fptt_exento_4">
-            <field name="rule" ref="tax_rule_iva_exec"/>
-            <field name="origin_tax" ref="iva_rep_0"/>
-            <field name="tax" ref="iva_rep_exc"/>
-            <field name="group" ref="tax_group_sale"/>
-        </record>
         <record model="account.tax.rule.line.template" id="fptt_0_1">
             <field name="rule" ref="tax_rule_iva_0"/>
             <field name="origin_tax" ref="iva_sop_16"/>
@@ -668,18 +656,6 @@ this repository contains the full copyright notices and license terms. -->
             <field name="tax" ref="iva_sop_0"/>
             <field name="group" ref="tax_group_purchase"/>
         </record>
-        <record model="account.tax.rule.line.template" id="fptt_0_3">
-            <field name="rule" ref="tax_rule_iva_0"/>
-            <field name="origin_tax" ref="iva_rep_16"/>
-            <field name="tax" ref="iva_rep_0"/>
-            <field name="group" ref="tax_group_sale"/>
-        </record>
-        <record model="account.tax.rule.line.template" id="fptt_0_4">
-            <field name="rule" ref="tax_rule_iva_0"/>
-            <field name="origin_tax" ref="iva_rep_exc"/>
-            <field name="tax" ref="iva_rep_0"/>
-            <field name="group" ref="tax_group_sale"/>
-        </record>
         <record model="account.tax.rule.line.template" id="fptt_nacional_1">
             <field name="rule" ref="tax_rule_iva_nac"/>
             <field name="origin_tax" ref="iva_sop_16"/>
@@ -687,35 +663,18 @@ this repository contains the full copyright notices and license terms. -->
             <field name="group" ref="tax_group_purchase"/>
             <field name="keep_origin" eval="True" pyson="1"/>
         </record>
-        <record model="account.tax.rule.line.template" id="fptt_nacional_2">
-            <field name="rule" ref="tax_rule_iva_nac"/>
-            <field name="origin_tax" ref="iva_rep_16"/>
-            <field name="tax" ref="isr_rep_iva"/>
-            <field name="group" ref="tax_group_sale"/>
-            <field name="keep_origin" eval="True" pyson="1"/>
-        </record>
         <record model="account.tax.rule.line.template" id="fptt_nacional_3">
             <field name="rule" ref="tax_rule_iva_nac"/>
+            <field name="origin_tax" ref="iva_sop_16"/>
             <field name="tax" ref="isr_sop_10"/>
             <field name="group" ref="tax_group_purchase"/>
             <field name="keep_origin" eval="True" pyson="1"/>
         </record>
-        <record model="account.tax.rule.line.template" id="fptt_nacional_4">
-            <field name="rule" ref="tax_rule_iva_nac"/>
-            <field name="tax" ref="isr_rep_10"/>
-            <field name="group" ref="tax_group_sale"/>
-            <field name="keep_origin" eval="True" pyson="1"/>
-        </record>
         <record model="account.tax.rule.line.template" id="fptt_persona_1">
             <field name="rule" ref="tax_rule_iva_pers"/>
+            <field name="origin_tax" ref="iva_sop_16"/>
             <field name="tax" ref="isr_sop_0125"/>
             <field name="group" ref="tax_group_purchase"/>
-            <field name="keep_origin" eval="True" pyson="1"/>
-        </record>
-        <record model="account.tax.rule.line.template" id="fptt_persona_2">
-            <field name="rule" ref="tax_rule_iva_pers"/>
-            <field name="tax" ref="isr_rep_0125"/>
-            <field name="group" ref="tax_group_sale"/>
             <field name="keep_origin" eval="True" pyson="1"/>
         </record>
     </data>
