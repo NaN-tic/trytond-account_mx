@@ -12,10 +12,13 @@ ws = wb['full preparat']
 first_row = True
 
 
-parent_accounts = {}
+#parent_accounts = {}
 
-parent_accounts_to_print = []
+main_parent_accounts_to_print = [] # Ex account 105
+sub_main_parent_accounts_to_print = [] # Ex account 105-00
+parent_accounts_to_print = [] # 105-00-00
 child_accounts_to_print = []
+sub_child_accounts_to_print = []
 child_child_accounts_to_print = []
 
 # This dictionary handles the type accounts
@@ -29,7 +32,6 @@ type_dict = {
     'Resultado': 'mx_07',
 }
 
-
 for row in ws.rows:
     if first_row:
         first_row = False
@@ -40,17 +42,40 @@ for row in ws.rows:
     name = row[2].value
 
     if code.endswith('-00-000'):
-        #type_record = type_dict.get(type)
-        #if not type_record:
-        #    print(f'-- ERROR: Type {type} not found for account: {code} - {name}')
-        #    raise
-        # Compte "pare"
-        account_code = 'pg_' + code[:6].replace('-', '_')
-        parent_accounts[code[:6]] = account_code
+        type_record = type_dict.get(type)
+        if not type_record:
+            print(f'-- ERROR: Type {type} not found for account: {code} - {name}')
+            raise
+        # Compte "pare principal"
+        account_code = 'pg_' + code[:3]
         parent = account_parent_0
+        main_parent_accounts_to_print.append(
+            f'<record model="account.account.template" id="{account_code}">'
+            f'\n    <field name="name">{name}</field>'
+            f'\n    <field name="parent" ref="{parent}"/>'
+            f'\n    <field name="code">{code[:3]}</field>'
+            f'\n    <field name="party_required" eval="False"/>'
+            '\n</record>')
+
+        # Compte "pare subprincipal"
+        parent = account_code
+        account_code = 'pg_' + code[:6].replace('-', '_')
+        sub_main_parent_accounts_to_print.append(
+            f'<record model="account.account.template" id="{account_code}">'
+            f'\n    <field name="name">{name}</field>'
+            f'\n    <field name="parent" ref="{parent}"/>'
+            f'\n    <field name="code">{code[:6]}</field>'
+            f'\n    <field name="party_required" eval="False"/>'
+            '\n</record>')
+
+        # Compte "pare fill"
+        parent = account_code
+        account_code = 'pg_' + code.replace('-', '_')
+        #parent_accounts[code[:6]] = account_code
         parent_accounts_to_print.append(
             f'<record model="account.account.template" id="{account_code}">'
             f'\n    <field name="name">{name}</field>'
+            f'\n    <field name="type" ref="{type_record}"/>'
             f'\n    <field name="parent" ref="{parent}"/>'
             f'\n    <field name="code">{code}</field>'
             f'\n    <field name="party_required" eval="False"/>'
@@ -63,8 +88,19 @@ for row in ws.rows:
         # Compte "fill"
         account_code = 'pg_' + code[:6].replace('-', '_')
         parent = None
-        parent_code = 'pg_' + code[:3]+'_00'
+        parent_code = 'pg_' + code[:3]
         child_accounts_to_print.append(
+            f'<record model="account.account.template" id="{account_code}">'
+            f'\n    <field name="name">{name}</field>'
+            f'\n    <field name="parent" ref="{parent_code}"/>'
+            f'\n    <field name="code">{code[:6]}</field>'
+            f'\n    <field name="party_required" eval="False"/>'
+            '\n</record>')
+
+        # Compte "fill fill"
+        parent_code = account_code
+        account_code = 'pg_' + code.replace('-', '_')
+        sub_child_accounts_to_print.append(
             f'<record model="account.account.template" id="{account_code}">'
             f'\n    <field name="name">{name}</field>'
             f'\n    <field name="type" ref="{type_record}"/>'
@@ -90,11 +126,21 @@ for row in ws.rows:
             f'\n    <field name="party_required" eval="False"/>'
             '\n</record>')
 
-for parent_account in parent_accounts_to_print:
-    print(parent_account)
+
+#for main_parent_account in main_parent_accounts_to_print:
+#    print(main_parent_account)
+
+#for sub_main_parent_account in sub_main_parent_accounts_to_print:
+#    print(sub_main_parent_account)
+
+#for parent_account in parent_accounts_to_print:
+#    print(parent_account)
 
 #for child_account in child_accounts_to_print:
 #    print(child_account)
+
+#for sub_child_account in sub_child_accounts_to_print:
+#    print(sub_child_account)
 
 #for child_child_account in child_child_accounts_to_print:
 #    print(child_child_account)
