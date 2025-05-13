@@ -42,6 +42,7 @@ this repository contains the full copyright notices and license terms. -->
             <field name="parent" ref="mx"/>
             <field name="sequence" eval="5"/>
             <field name="statement">income</field>
+            <field name="expense" eval="True"/>
         </record>
         <record model="account.account.type.template" id="mx_06">
             <field name="name">6. Gastos</field>
