@@ -133,8 +133,8 @@ this repository contains the full copyright notices and license terms. -->
             <field name="group" ref="tax_group_sale"/>
             <field name="type">percentage</field>
             <field name="rate" eval="Decimal('0.16')"/>
-            <field name="invoice_account" ref="pg_209_01"/>
-            <field name="credit_note_account" ref="pg_209_01"/>
+            <field name="invoice_account" ref="pg_209_01_000"/>
+            <field name="credit_note_account" ref="pg_209_01_000"/>
             <field name="sequence" eval="1000"/>
         </record>
         <record model="account.tax.template" id="iva_rep_0"> <!-- Veta -->
@@ -144,8 +144,8 @@ this repository contains the full copyright notices and license terms. -->
             <field name="group" ref="tax_group_sale"/>
             <field name="type">percentage</field>
             <field name="rate" eval="Decimal('0.0')"/>
-            <field name="invoice_account" ref="pg_209_01"/>
-            <field name="credit_note_account" ref="pg_209_01"/>
+            <field name="invoice_account" ref="pg_209_01_000"/>
+            <field name="credit_note_account" ref="pg_209_01_000"/>
             <field name="sequence" eval="1000"/>
         </record>
         <record model="account.tax.template" id="iva_rep_exc"> <!-- Venta -->
@@ -155,8 +155,8 @@ this repository contains the full copyright notices and license terms. -->
             <field name="group" ref="tax_group_sale"/>
             <field name="type">percentage</field>
             <field name="rate" eval="Decimal('0.0')"/>
-            <field name="invoice_account" ref="pg_209_01"/>
-            <field name="credit_note_account" ref="pg_209_01"/>
+            <field name="invoice_account" ref="pg_209_01_000"/>
+            <field name="credit_note_account" ref="pg_209_01_000"/>
             <field name="sequence" eval="1000"/>
         </record>
         <record model="account.tax.template" id="iva_sop_16">
@@ -166,8 +166,8 @@ this repository contains the full copyright notices and license terms. -->
             <field name="group" ref="tax_group_purchase"/>
             <field name="type">percentage</field>
             <field name="rate" eval="Decimal('0.16')"/>
-            <field name="invoice_account" ref="pg_119_01"/>
-            <field name="credit_note_account" ref="pg_119_01"/>
+            <field name="invoice_account" ref="pg_119_01_000"/>
+            <field name="credit_note_account" ref="pg_119_01_000"/>
             <field name="sequence" eval="1000"/>
         </record>
         <record model="account.tax.template" id="iva_sop_0">
@@ -177,8 +177,8 @@ this repository contains the full copyright notices and license terms. -->
             <field name="group" ref="tax_group_purchase"/>
             <field name="type">percentage</field>
             <field name="rate" eval="Decimal('0.0')"/>
-            <field name="invoice_account" ref="pg_119_01"/>
-            <field name="credit_note_account" ref="pg_119_01"/>
+            <field name="invoice_account" ref="pg_119_01_000"/>
+            <field name="credit_note_account" ref="pg_119_01_000"/>
             <field name="sequence" eval="1000"/>
         </record>
         <record model="account.tax.template" id="iva_sop_exc">
@@ -188,8 +188,8 @@ this repository contains the full copyright notices and license terms. -->
             <field name="group" ref="tax_group_purchase"/>
             <field name="type">percentage</field>
             <field name="rate" eval="Decimal('0.0')"/>
-            <field name="invoice_account" ref="pg_119_01"/>
-            <field name="credit_note_account" ref="pg_119_01"/>
+            <field name="invoice_account" ref="pg_119_01_000"/>
+            <field name="credit_note_account" ref="pg_119_01_000"/>
             <field name="sequence" eval="1000"/>
         </record>
     </data>
@@ -201,8 +201,8 @@ this repository contains the full copyright notices and license terms. -->
             <field name="group" ref="tax_group_sale"/>
             <field name="type">percentage</field>
             <field name="rate" eval="Decimal('-0.10')"/>
-            <field name="invoice_account" ref="pg_216_04"/>
-            <field name="credit_note_account" ref="pg_216_04"/>
+            <field name="invoice_account" ref="pg_216_04_000"/>
+            <field name="credit_note_account" ref="pg_216_04_000"/>
             <field name="sequence" eval="1000"/>
         </record>
         <record model="account.tax.template" id="isr_rep_iva">
@@ -212,8 +212,8 @@ this repository contains the full copyright notices and license terms. -->
             <field name="group" ref="tax_group_sale"/>
             <field name="type">percentage</field>
             <field name="rate" eval="Decimal('-0.1067')"/>
-            <field name="invoice_account" ref="pg_216_10"/>
-            <field name="credit_note_account" ref="pg_216_10"/>
+            <field name="invoice_account" ref="pg_216_10_000"/>
+            <field name="credit_note_account" ref="pg_216_10_000"/>
             <field name="sequence" eval="1000"/>
         </record>
         <record model="account.tax.template" id="isr_rep_0125">
@@ -223,8 +223,8 @@ this repository contains the full copyright notices and license terms. -->
             <field name="group" ref="tax_group_sale"/>
             <field name="type">percentage</field>
             <field name="rate" eval="Decimal('-0.0125')"/>
-            <field name="invoice_account" ref="pg_216_04"/>
-            <field name="credit_note_account" ref="pg_216_04"/>
+            <field name="invoice_account" ref="pg_216_04_000"/>
+            <field name="credit_note_account" ref="pg_216_04_000"/>
             <field name="sequence" eval="1000"/>
         </record>
 
@@ -235,8 +235,8 @@ this repository contains the full copyright notices and license terms. -->
             <field name="group" ref="tax_group_purchase"/>
             <field name="type">percentage</field>
             <field name="rate" eval="Decimal('-0.10')"/>
-            <field name="invoice_account" ref="pg_216_04"/>
-            <field name="credit_note_account" ref="pg_216_04"/>
+            <field name="invoice_account" ref="pg_216_04_000"/>
+            <field name="credit_note_account" ref="pg_216_04_000"/>
             <field name="sequence" eval="1000"/>
         </record>
         <record model="account.tax.template" id="isr_sop_iva">
@@ -246,8 +246,8 @@ this repository contains the full copyright notices and license terms. -->
             <field name="group" ref="tax_group_purchase"/>
             <field name="type">percentage</field>
             <field name="rate" eval="Decimal('-0.1067')"/>
-            <field name="invoice_account" ref="pg_216_10"/>
-            <field name="credit_note_account" ref="pg_216_10"/>
+            <field name="invoice_account" ref="pg_216_10_000"/>
+            <field name="credit_note_account" ref="pg_216_10_000"/>
             <field name="sequence" eval="1000"/>
         </record>
         <record model="account.tax.template" id="isr_sop_0125">
@@ -257,8 +257,8 @@ this repository contains the full copyright notices and license terms. -->
             <field name="group" ref="tax_group_purchase"/>
             <field name="type">percentage</field>
             <field name="rate" eval="Decimal('-0.0125')"/>
-            <field name="invoice_account" ref="pg_216_04"/>
-            <field name="credit_note_account" ref="pg_216_04"/>
+            <field name="invoice_account" ref="pg_216_04_000"/>
+            <field name="credit_note_account" ref="pg_216_04_000"/>
             <field name="sequence" eval="1000"/>
         </record>
     </data>
