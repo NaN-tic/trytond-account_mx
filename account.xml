@@ -16,6 +16,9 @@ this repository contains the full copyright notices and license terms. -->
             <field name="parent" ref="mx"/>
             <field name="sequence" eval="1"/>
             <field name="statement">balance</field>
+            <field name="assets" eval="True"/>
+            <field name="receivable" eval="True"/>
+            <field name="fixed_asset" eval="True"/>
         </record>
         <record model="account.account.type.template" id="mx_02">
             <field name="name">2. Pasivo</field>
