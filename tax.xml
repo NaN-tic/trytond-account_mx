@@ -615,6 +615,21 @@ this repository contains the full copyright notices and license terms. -->
             <field name="account" ref="pc_0"/>
             <field name="kind">both</field>
         </record>
+        <record model="account.tax.rule.template" id="tax_rule_iva_ret_iva">
+            <field name="name">Retenciones IVA</field>
+            <field name="account" ref="pc_0"/>
+            <field name="kind">both</field>
+        </record>
+        <record model="account.tax.rule.template" id="tax_rule_iva_ret_isr_10">
+            <field name="name">Retenciones ISR 10%</field>
+            <field name="account" ref="pc_0"/>
+            <field name="kind">both</field>
+        </record>
+        <record model="account.tax.rule.template" id="tax_rule_iva_ret_isr_10_ret_iva">
+            <field name="name">Retenciones ISR 10% + Retenciones IVA</field>
+            <field name="account" ref="pc_0"/>
+            <field name="kind">both</field>
+        </record>
         <record model="account.tax.rule.template" id="tax_rule_iva_exec">
             <field name="name">IVA Exento</field>
             <field name="account" ref="pc_0"/>
@@ -658,22 +673,41 @@ this repository contains the full copyright notices and license terms. -->
         </record>
         <record model="account.tax.rule.line.template" id="fptt_nacional_1">
             <field name="rule" ref="tax_rule_iva_nac"/>
-            <field name="origin_tax" ref="iva_sop_16"/>
-            <field name="tax" ref="isr_sop_iva"/>
+            <field name="tax" ref="iva_sop_16"/>
             <field name="group" ref="tax_group_purchase"/>
-            <field name="keep_origin" eval="True" pyson="1"/>
-        </record>
-        <record model="account.tax.rule.line.template" id="fptt_nacional_3">
-            <field name="rule" ref="tax_rule_iva_nac"/>
-            <field name="origin_tax" ref="iva_sop_16"/>
-            <field name="tax" ref="isr_sop_10"/>
-            <field name="group" ref="tax_group_purchase"/>
-            <field name="keep_origin" eval="True" pyson="1"/>
         </record>
         <record model="account.tax.rule.line.template" id="fptt_persona_1">
             <field name="rule" ref="tax_rule_iva_pers"/>
             <field name="origin_tax" ref="iva_sop_16"/>
             <field name="tax" ref="isr_sop_0125"/>
+            <field name="group" ref="tax_group_purchase"/>
+            <field name="keep_origin" eval="True" pyson="1"/>
+        </record>
+        <record model="account.tax.rule.line.template" id="fptt_iva_ret_iva_1">
+            <field name="rule" ref="tax_rule_iva_ret_iva"/>
+            <field name="origin_tax" ref="iva_sop_16"/>
+            <field name="tax" ref="isr_sop_iva"/>
+            <field name="group" ref="tax_group_purchase"/>
+            <field name="keep_origin" eval="True" pyson="1"/>
+        </record>
+        <record model="account.tax.rule.line.template" id="fptt_iva_ret_isr_10_1">
+            <field name="rule" ref="tax_rule_iva_ret_isr_10"/>
+            <field name="origin_tax" ref="iva_sop_16"/>
+            <field name="tax" ref="isr_sop_10"/>
+            <field name="group" ref="tax_group_purchase"/>
+            <field name="keep_origin" eval="True" pyson="1"/>
+        </record>
+        <record model="account.tax.rule.line.template" id="fptt_iva_ret_isr_10_ret_iva_1">
+            <field name="rule" ref="tax_rule_iva_ret_isr_10_ret_iva"/>
+            <field name="origin_tax" ref="iva_sop_16"/>
+            <field name="tax" ref="isr_sop_iva"/>
+            <field name="group" ref="tax_group_purchase"/>
+            <field name="keep_origin" eval="True" pyson="1"/>
+        </record>
+        <record model="account.tax.rule.line.template" id="fptt_iva_ret_isr_10_ret_iva_2">
+            <field name="rule" ref="tax_rule_iva_ret_isr_10_ret_iva"/>
+            <field name="origin_tax" ref="iva_sop_16"/>
+            <field name="tax" ref="isr_sop_10"/>
             <field name="group" ref="tax_group_purchase"/>
             <field name="keep_origin" eval="True" pyson="1"/>
         </record>
