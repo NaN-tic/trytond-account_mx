@@ -20,108 +20,234 @@ this repository contains the full copyright notices and license terms. -->
         </record>
     </data>
     <data grouped="1">
+        <record model="account.tax.code.template" id="vat_code_chart_root">
+            <field name="name">Plantilla Plan de Impuestos</field>
+            <field name="account" ref="pc_0"/>
+        </record>
+    </data>
+    <data grouped="1">
+        <record model="account.tax.code.template" id="vat_code_chart_dev">
+            <field name="name">Devengado (repercutido)</field>
+            <field name="parent" ref="vat_code_chart_root"/>
+            <field name="account" ref="pc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="vat_code_chart_ded">
+            <field name="name">Deducible (soportado)</field>
+            <field name="parent" ref="vat_code_chart_root"/>
+            <field name="account" ref="pc_0"/>
+        </record>
+    </data>
+    <data grouped="1">
+        <!-- Devengado (repercutido) [Clientes] -->
+        <record model="account.tax.code.template" id="vat_code_chart_dev_base">
+            <field name="name">Bases (Devengado)</field>
+            <field name="parent" ref="vat_code_chart_dev"/>
+            <field name="account" ref="pc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="vat_code_chart_dev_cuota">
+            <field name="name">Cuotas (Devengado)</field>
+            <field name="parent" ref="vat_code_chart_dev"/>
+            <field name="account" ref="pc_0"/>
+        </record>
+
+        <!-- Deducible (soprtado) [Proveedores] -->
+        <record model="account.tax.code.template" id="vat_code_chart_ded_base">
+            <field name="name">Bases (Deducible)</field>
+            <field name="parent" ref="vat_code_chart_ded"/>
+            <field name="account" ref="pc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="vat_code_chart_ded_cuota">
+            <field name="name">Cuotas (Deducible)</field>
+            <field name="parent" ref="vat_code_chart_ded"/>
+            <field name="account" ref="pc_0"/>
+        </record>
+    </data>
+    <data grouped="1">
+        <!-- Devengado (repercutido) [Clientes] / Base -->
+        <record model="account.tax.code.template" id="iva_dev_base">
+            <field name="name">IVA Devengado (Base)</field>
+            <field name="parent" ref="vat_code_chart_dev_base"/>
+            <field name="account" ref="pc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="base_rep_ex">
+            <field name="name">Ventas Exentas (Base Devengado)</field>
+            <field name="parent" ref="vat_code_chart_dev_base"/>
+            <field name="account" ref="pc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="irpf_dev_base">
+            <field name="name">Retenciones a cuenta (Base Devengado)</field>
+            <field name="parent" ref="vat_code_chart_dev_base"/>
+            <field name="account" ref="pc_0"/>
+        </record>
+
+        <!-- Devengado (repercutido) [Clientes] / Cuota -->
+        <record model="account.tax.code.template" id="iva_dev_cuota">
+            <field name="name">IVA Devengado (Cuota)</field>
+            <field name="parent" ref="vat_code_chart_dev_cuota"/>
+            <field name="account" ref="pc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="irpf_dev_cuota">
+            <field name="name">IRPF Retenciones a cuenta (Cuota Devengado)</field>
+            <field name="parent" ref="vat_code_chart_dev_cuota"/>
+            <field name="account" ref="pc_0"/>
+        </record>
+
+        <!-- Deducible (soprtado) [Proveedores] / Base -->
+        <record model="account.tax.code.template" id="iva_sop_base">
+            <field name="name">IVA Deducible (Base)</field>
+            <field name="parent" ref="vat_code_chart_ded_base"/>
+            <field name="account" ref="pc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="base_sop_ex">
+            <field name="name">Adquisiciones Exentas (Base Deducible)</field>
+            <field name="parent" ref="vat_code_chart_ded_base"/>
+            <field name="account" ref="pc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="irpf_sop_base">
+            <field name="name">Retenciones practicadas (Base Deducible)</field>
+            <field name="parent" ref="vat_code_chart_ded_base"/>
+            <field name="account" ref="pc_0"/>
+        </record>
+
+        <!-- Deducible (soprtado) [Proveedores] / Cuota -->
+        <record model="account.tax.code.template" id="iva_sop_cuota">
+            <field name="name">IVA Deducible (Cuota)</field>
+            <field name="parent" ref="vat_code_chart_ded_cuota"/>
+            <field name="account" ref="pc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="irpf_sop_cuota">
+            <field name="name">Retenciones practicadas (Cuota Deducible)</field>
+            <field name="parent" ref="vat_code_chart_ded_cuota"/>
+            <field name="account" ref="pc_0"/>
+        </record>
+    </data>
+    <data grouped="1">
         <record model="account.tax.code.template" id="iva_dev_01_16">
             <field name="name">Base IVA Devengado 16%</field>
+            <field name="parent" ref="iva_dev_base"/>
             <field name="account" ref="pc_0"/>
         </record>
         <record model="account.tax.code.template" id="iva_dev_02_16">
             <field name="name">Cuota IVA Devengado 16%</field>
+            <field name="parent" ref="iva_dev_cuota"/>
             <field name="account" ref="pc_0"/>
         </record>
 
         <record model="account.tax.code.template" id="iva_dev_01_0">
             <field name="name">Base IVA Devengado 0%</field>
-            <field name="account" ref="pc_0"/>
-        </record>
-        <record model="account.tax.code.template" id="iva_dev_02_0">
-            <field name="name">Cuota IVA Devengado 0%</field>
+            <field name="parent" ref="iva_dev_base"/>
             <field name="account" ref="pc_0"/>
         </record>
 
         <record model="account.tax.code.template" id="iva_dev_01_exc">
-            <field name="name">Base IVA Devengado Excento</field>
-            <field name="account" ref="pc_0"/>
-        </record>
-        <record model="account.tax.code.template" id="iva_dev_02_exc">
-            <field name="name">Cuota IVA Devengado Excento</field>
+            <field name="name">Base IVA Devengado Exento</field>
+            <field name="parent" ref="base_rep_ex"/>
             <field name="account" ref="pc_0"/>
         </record>
 
         <record model="account.tax.code.template" id="iva_sop_01_16">
             <field name="name">Base IVA Soportado 16%</field>
+            <field name="parent" ref="iva_sop_base"/>
             <field name="account" ref="pc_0"/>
         </record>
         <record model="account.tax.code.template" id="iva_sop_02_16">
             <field name="name">Cuota IVA Soportado 16%</field>
+            <field name="parent" ref="iva_sop_cuota"/>
             <field name="account" ref="pc_0"/>
         </record>
 
         <record model="account.tax.code.template" id="iva_sop_01_0">
             <field name="name">Base IVA Soportado 0%</field>
-            <field name="account" ref="pc_0"/>
-        </record>
-        <record model="account.tax.code.template" id="iva_sop_02_0">
-            <field name="name">Cuota IVA Soportado 0%</field>
+            <field name="parent" ref="iva_dev_base"/>
             <field name="account" ref="pc_0"/>
         </record>
 
         <record model="account.tax.code.template" id="iva_sop_01_exc">
-            <field name="name">Base IVA Soportado Excento</field>
-            <field name="account" ref="pc_0"/>
-        </record>
-        <record model="account.tax.code.template" id="iva_sop_02_exc">
-            <field name="name">Cuota IVA Soportado Excento</field>
+            <field name="name">Base IVA Soportado Exento</field>
+            <field name="parent" ref="base_sop_ex"/>
             <field name="account" ref="pc_0"/>
         </record>
     </data>
     <data grouped="1">
         <record model="account.tax.code.template" id="isr_dev_01_10">
             <field name="name">Retenciones ISR 10% (Base Devengado)</field>
+            <field name="parent" ref="irpf_dev_base"/>
             <field name="account" ref="pc_0"/>
         </record>
         <record model="account.tax.code.template" id="isr_dev_02_10">
             <field name="name">Retenciones ISR 10% (Cuota Devengado)</field>
+            <field name="parent" ref="irpf_dev_cuota"/>
             <field name="account" ref="pc_0"/>
         </record>
         <record model="account.tax.code.template" id="isr_dev_01_iva">
             <field name="name">Retenciones de IVA (Base Devengado)</field>
+            <field name="parent" ref="irpf_dev_base"/>
             <field name="account" ref="pc_0"/>
         </record>
         <record model="account.tax.code.template" id="isr_dev_02_iva">
             <field name="name">Retenciones de IVA (Cuota Devengado)</field>
+            <field name="parent" ref="irpf_dev_cuota"/>
             <field name="account" ref="pc_0"/>
         </record>
         <record model="account.tax.code.template" id="isr_dev_01_0125">
             <field name="name">Retenciones ISR a las personas físicas (Base Devengado)</field>
+            <field name="parent" ref="irpf_dev_base"/>
             <field name="account" ref="pc_0"/>
         </record>
         <record model="account.tax.code.template" id="isr_dev_02_0125">
             <field name="name">Retenciones ISR a las personas físicas (Cuota Devengado)</field>
+            <field name="parent" ref="irpf_dev_cuota"/>
+            <field name="account" ref="pc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="ret_dev_04_base">
+            <field name="name">Retenciones 4% (Base Devengado)</field>
+            <field name="parent" ref="irpf_dev_base"/>
+            <field name="account" ref="pc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="ret_dev_04_cuota">
+            <field name="name">Retenciones 4% (Cuota Devengado)</field>
+            <field name="parent" ref="irpf_dev_cuota"/>
             <field name="account" ref="pc_0"/>
         </record>
 
         <record model="account.tax.code.template" id="isr_sop_01_10">
             <field name="name">Retenciones ISR 10% (Base Soportado)</field>
+            <field name="parent" ref="irpf_sop_base"/>
             <field name="account" ref="pc_0"/>
         </record>
         <record model="account.tax.code.template" id="isr_sop_02_10">
             <field name="name">Retenciones ISR 10% (Cuota Soportado)</field>
+            <field name="parent" ref="irpf_sop_cuota"/>
             <field name="account" ref="pc_0"/>
         </record>
         <record model="account.tax.code.template" id="isr_sop_01_iva">
             <field name="name">Retenciones de IVA (Base Soportado)</field>
+            <field name="parent" ref="irpf_sop_base"/>
             <field name="account" ref="pc_0"/>
         </record>
         <record model="account.tax.code.template" id="isr_sop_02_iva">
             <field name="name">Retenciones de IVA (Cuota Soportado)</field>
+            <field name="parent" ref="irpf_sop_cuota"/>
             <field name="account" ref="pc_0"/>
         </record>
         <record model="account.tax.code.template" id="isr_sop_01_0125">
             <field name="name">Retenciones ISR a las personas físicas (Base Soportado)</field>
+            <field name="parent" ref="irpf_sop_base"/>
             <field name="account" ref="pc_0"/>
         </record>
         <record model="account.tax.code.template" id="isr_sop_02_0125">
             <field name="name">Retenciones ISR a las personas físicas (Cuota Soportado)</field>
+            <field name="parent" ref="irpf_sop_cuota"/>
+            <field name="account" ref="pc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="ret_sop_04_base">
+            <field name="name">Retenciones 4% (Base Soprtada)</field>
+            <field name="parent" ref="irpf_sop_base"/>
+            <field name="account" ref="pc_0"/>
+        </record>
+        <record model="account.tax.code.template" id="ret_sop_04_cuota">
+            <field name="name">Retenciones 4% (Cuota Soprtada)</field>
+            <field name="parent" ref="irpf_sop_cuota"/>
             <field name="account" ref="pc_0"/>
         </record>
     </data>
@@ -139,7 +265,7 @@ this repository contains the full copyright notices and license terms. -->
         </record>
         <record model="account.tax.template" id="iva_rep_0"> <!-- Veta -->
             <field name="name">IVA 0%</field>
-            <field name="description">IVA Excento</field>
+            <field name="description">IVA Exento</field>
             <field name="account" ref="pc_0"/>
             <field name="group" ref="tax_group_sale"/>
             <field name="type">percentage</field>
@@ -149,8 +275,8 @@ this repository contains the full copyright notices and license terms. -->
             <field name="sequence" eval="1000"/>
         </record>
         <record model="account.tax.template" id="iva_rep_exc"> <!-- Venta -->
-            <field name="name">IVA Excento</field>
-            <field name="description">IVA Excento</field>
+            <field name="name">IVA Exento</field>
+            <field name="description">IVA Exento</field>
             <field name="account" ref="pc_0"/>
             <field name="group" ref="tax_group_sale"/>
             <field name="type">percentage</field>
@@ -172,7 +298,7 @@ this repository contains the full copyright notices and license terms. -->
         </record>
         <record model="account.tax.template" id="iva_sop_0">
             <field name="name">IVA 0%</field>
-            <field name="description">IVA Excento</field>
+            <field name="description">IVA Exento</field>
             <field name="account" ref="pc_0"/>
             <field name="group" ref="tax_group_purchase"/>
             <field name="type">percentage</field>
@@ -182,8 +308,8 @@ this repository contains the full copyright notices and license terms. -->
             <field name="sequence" eval="1000"/>
         </record>
         <record model="account.tax.template" id="iva_sop_exc">
-            <field name="name">IVA Excento</field>
-            <field name="description">IVA Excento</field>
+            <field name="name">IVA Exento</field>
+            <field name="description">IVA Exento</field>
             <field name="account" ref="pc_0"/>
             <field name="group" ref="tax_group_purchase"/>
             <field name="type">percentage</field>
@@ -227,6 +353,17 @@ this repository contains the full copyright notices and license terms. -->
             <field name="credit_note_account" ref="pg_216_04_000"/>
             <field name="sequence" eval="1000"/>
         </record>
+        <record model="account.tax.template" id="ret_rep_04">
+            <field name="name">Retenciones 4%</field>
+            <field name="description">Retenciones 4%</field>
+            <field name="account" ref="pc_0"/>
+            <field name="group" ref="tax_group_sale"/>
+            <field name="type">percentage</field>
+            <field name="rate" eval="Decimal('-0.04')"/>
+            <field name="invoice_account" ref="pg_216_10_000"/>
+            <field name="credit_note_account" ref="pg_216_10_000"/>
+            <field name="sequence" eval="1000"/>
+        </record>
 
         <record model="account.tax.template" id="isr_sop_10">
             <field name="name">Retenciones ISR 10%</field>
@@ -257,6 +394,17 @@ this repository contains the full copyright notices and license terms. -->
             <field name="group" ref="tax_group_purchase"/>
             <field name="type">percentage</field>
             <field name="rate" eval="Decimal('-0.0125')"/>
+            <field name="invoice_account" ref="pg_216_04_000"/>
+            <field name="credit_note_account" ref="pg_216_04_000"/>
+            <field name="sequence" eval="1000"/>
+        </record>
+        <record model="account.tax.template" id="ret_sop_04">
+            <field name="name">Retenciones ISR 10%</field>
+            <field name="description">Retenciones ISR 10%</field>
+            <field name="account" ref="pc_0"/>
+            <field name="group" ref="tax_group_purchase"/>
+            <field name="type">percentage</field>
+            <field name="rate" eval="Decimal('-0.04')"/>
             <field name="invoice_account" ref="pg_216_04_000"/>
             <field name="credit_note_account" ref="pg_216_04_000"/>
             <field name="sequence" eval="1000"/>
@@ -306,20 +454,6 @@ this repository contains the full copyright notices and license terms. -->
             <field name="type">credit</field>
             <field name="amount">base</field>
         </record>
-        <record model="account.tax.code.line.template" id="iva_rep_0-iva_dev_02_0-invoice-tax">
-            <field name="code" ref="iva_dev_02_0"/>
-            <field name="tax" ref="iva_rep_0"/>
-            <field name="operator">+</field>
-            <field name="type">invoice</field>
-            <field name="amount">tax</field>
-        </record>
-        <record model="account.tax.code.line.template" id="iva_rep_0-iva_dev_02_0-credit-tax">
-            <field name="code" ref="iva_dev_02_0"/>
-            <field name="tax" ref="iva_rep_0"/>
-            <field name="operator">-</field>
-            <field name="type">credit</field>
-            <field name="amount">tax</field>
-        </record>
 
         <record model="account.tax.code.line.template" id="iva_rep_exc-iva_dev_01_exc-invoice-base">
             <field name="code" ref="iva_dev_01_exc"/>
@@ -334,20 +468,6 @@ this repository contains the full copyright notices and license terms. -->
             <field name="operator">-</field>
             <field name="type">credit</field>
             <field name="amount">base</field>
-        </record>
-        <record model="account.tax.code.line.template" id="iva_rep_exc-iva_dev_02_exc-invoice-tax">
-            <field name="code" ref="iva_dev_02_exc"/>
-            <field name="tax" ref="iva_rep_exc"/>
-            <field name="operator">+</field>
-            <field name="type">invoice</field>
-            <field name="amount">tax</field>
-        </record>
-        <record model="account.tax.code.line.template" id="iva_rep_exc-iva_dev_02_exc-credit-tax">
-            <field name="code" ref="iva_dev_02_exc"/>
-            <field name="tax" ref="iva_rep_exc"/>
-            <field name="operator">-</field>
-            <field name="type">credit</field>
-            <field name="amount">tax</field>
         </record>
 
         <record model="account.tax.code.line.template" id="iva_sop_16-iva_sop_01_16-invoice-base">
@@ -393,20 +513,6 @@ this repository contains the full copyright notices and license terms. -->
             <field name="type">credit</field>
             <field name="amount">base</field>
         </record>
-        <record model="account.tax.code.line.template" id="iva_sop_0-iva_sop_02_0-invoice-tax">
-            <field name="code" ref="iva_sop_02_0"/>
-            <field name="tax" ref="iva_sop_0"/>
-            <field name="operator">+</field>
-            <field name="type">invoice</field>
-            <field name="amount">tax</field>
-        </record>
-        <record model="account.tax.code.line.template" id="iva_sop_0-iva_sop_02_0-credit-tax">
-            <field name="code" ref="iva_sop_02_0"/>
-            <field name="tax" ref="iva_sop_0"/>
-            <field name="operator">-</field>
-            <field name="type">credit</field>
-            <field name="amount">tax</field>
-        </record>
 
         <record model="account.tax.code.line.template" id="iva_sop_exc-iva_sop_01_exc-invoice-base">
             <field name="code" ref="iva_sop_01_exc"/>
@@ -421,20 +527,6 @@ this repository contains the full copyright notices and license terms. -->
             <field name="operator">-</field>
             <field name="type">credit</field>
             <field name="amount">base</field>
-        </record>
-        <record model="account.tax.code.line.template" id="iva_sop_exc-iva_sop_02_exc-invoice-tax">
-            <field name="code" ref="iva_sop_02_exc"/>
-            <field name="tax" ref="iva_sop_exc"/>
-            <field name="operator">+</field>
-            <field name="type">invoice</field>
-            <field name="amount">tax</field>
-        </record>
-        <record model="account.tax.code.line.template" id="iva_sop_exc-iva_sop_02_exc-credit-tax">
-            <field name="code" ref="iva_sop_02_exc"/>
-            <field name="tax" ref="iva_sop_exc"/>
-            <field name="operator">-</field>
-            <field name="type">credit</field>
-            <field name="amount">tax</field>
         </record>
     </data>
     <data grouped="1">
@@ -522,7 +614,34 @@ this repository contains the full copyright notices and license terms. -->
             <field name="type">credit</field>
             <field name="amount">tax</field>
         </record>
-
+        <record model="account.tax.code.line.template" id="ret_rep_04-ret_dev_04_base-invoice-base">
+            <field name="code" ref="ret_dev_04_base"/>
+            <field name="tax" ref="ret_rep_04"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="ret_rep_04-ret_dev_04_base-credit-base">
+            <field name="code" ref="ret_dev_04_base"/>
+            <field name="tax" ref="ret_rep_04"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="ret_rep_04-ret_dev_04_cuota-invoice-tax">
+            <field name="code" ref="ret_dev_04_cuota"/>
+            <field name="tax" ref="ret_rep_04"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">tax</field>
+        </record>
+        <record model="account.tax.code.line.template" id="ret_rep_04-ret_dev_04_cuota-credit-tax">
+            <field name="code" ref="ret_dev_04_cuota"/>
+            <field name="tax" ref="ret_rep_04"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">tax</field>
+        </record>
 
         <record model="account.tax.code.line.template" id="isr_sop_10-isr_sop_01_10-invoice-base">
             <field name="code" ref="isr_sop_01_10"/>
@@ -608,6 +727,34 @@ this repository contains the full copyright notices and license terms. -->
             <field name="type">credit</field>
             <field name="amount">tax</field>
         </record>
+        <record model="account.tax.code.line.template" id="ret_sop_04-ret_sop_04_base-invoice-base">
+            <field name="code" ref="ret_sop_04_base"/>
+            <field name="tax" ref="ret_sop_04"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="ret_sop_04-ret_sop_04_base-credit-base">
+            <field name="code" ref="ret_sop_04_base"/>
+            <field name="tax" ref="ret_sop_04"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="ret_sop_04-ret_sop_04_cuota-invoice-tax">
+            <field name="code" ref="ret_sop_04_cuota"/>
+            <field name="tax" ref="ret_sop_04"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">tax</field>
+        </record>
+        <record model="account.tax.code.line.template" id="ret_sop_04-ret_sop_04_cuota-credit-tax">
+            <field name="code" ref="ret_sop_04_cuota"/>
+            <field name="tax" ref="ret_sop_04"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">tax</field>
+        </record>
     </data>
     <data grouped="1">
         <record model="account.tax.rule.template" id="tax_rule_iva_nac">
@@ -641,7 +788,17 @@ this repository contains the full copyright notices and license terms. -->
             <field name="kind">both</field>
         </record>
         <record model="account.tax.rule.template" id="tax_rule_iva_pers">
-            <field name="name">Personas físicas</field>
+            <field name="name">Retención ISR 1.25%</field>
+            <field name="account" ref="pc_0"/>
+            <field name="kind">both</field>
+        </record>
+        <record model="account.tax.rule.template" id="tax_rule_iva_ret_04">
+            <field name="name">Retención IVA 4%</field>
+            <field name="account" ref="pc_0"/>
+            <field name="kind">both</field>
+        </record>
+        <record model="account.tax.rule.template" id="tax_rule_iva_ret_isr_0125_ret_iva">
+            <field name="name">Retención ISR 1.25% + Retención IVA</field>
             <field name="account" ref="pc_0"/>
             <field name="kind">both</field>
         </record>
@@ -772,6 +929,48 @@ this repository contains the full copyright notices and license terms. -->
             <field name="rule" ref="tax_rule_iva_ret_isr_10_ret_iva"/>
             <field name="origin_tax" ref="iva_rep_16"/>
             <field name="tax" ref="isr_rep_10"/>
+            <field name="group" ref="tax_group_sale"/>
+            <field name="keep_origin" eval="True" pyson="1"/>
+        </record>
+        <record model="account.tax.rule.line.template" id="fptt_iva_ret_04_1">
+            <field name="rule" ref="tax_rule_iva_ret_04"/>
+            <field name="origin_tax" ref="iva_sop_16"/>
+            <field name="tax" ref="ret_sop_04"/>
+            <field name="group" ref="tax_group_purchase"/>
+            <field name="keep_origin" eval="True" pyson="1"/>
+        </record>
+        <record model="account.tax.rule.line.template" id="fptt_iva_ret_04_2">
+            <field name="rule" ref="tax_rule_iva_ret_04"/>
+            <field name="origin_tax" ref="iva_rep_16"/>
+            <field name="tax" ref="ret_rep_04"/>
+            <field name="group" ref="tax_group_sale"/>
+            <field name="keep_origin" eval="True" pyson="1"/>
+        </record>
+        <record model="account.tax.rule.line.template" id="fptt_iva_ret_isr_0125_ret_iva_1">
+            <field name="rule" ref="tax_rule_iva_ret_isr_0125_ret_iva"/>
+            <field name="origin_tax" ref="iva_sop_16"/>
+            <field name="tax" ref="isr_sop_iva"/>
+            <field name="group" ref="tax_group_purchase"/>
+            <field name="keep_origin" eval="True" pyson="1"/>
+        </record>
+        <record model="account.tax.rule.line.template" id="fptt_iva_ret_isr_0125_ret_iva_2">
+            <field name="rule" ref="tax_rule_iva_ret_isr_0125_ret_iva"/>
+            <field name="origin_tax" ref="iva_rep_16"/>
+            <field name="tax" ref="isr_rep_iva"/>
+            <field name="group" ref="tax_group_sale"/>
+            <field name="keep_origin" eval="True" pyson="1"/>
+        </record>
+        <record model="account.tax.rule.line.template" id="fptt_iva_ret_isr_0125_ret_iva_3">
+            <field name="rule" ref="tax_rule_iva_ret_isr_0125_ret_iva"/>
+            <field name="origin_tax" ref="iva_sop_16"/>
+            <field name="tax" ref="isr_sop_0125"/>
+            <field name="group" ref="tax_group_purchase"/>
+            <field name="keep_origin" eval="True" pyson="1"/>
+        </record>
+        <record model="account.tax.rule.line.template" id="fptt_iva_ret_isr_0125_ret_iva_4">
+            <field name="rule" ref="tax_rule_iva_ret_isr_0125_ret_iva"/>
+            <field name="origin_tax" ref="iva_rep_16"/>
+            <field name="tax" ref="isr_rep_0125"/>
             <field name="group" ref="tax_group_sale"/>
             <field name="keep_origin" eval="True" pyson="1"/>
         </record>
