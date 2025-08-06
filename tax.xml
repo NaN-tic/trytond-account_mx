@@ -399,8 +399,8 @@ this repository contains the full copyright notices and license terms. -->
             <field name="sequence" eval="1000"/>
         </record>
         <record model="account.tax.template" id="ret_sop_04">
-            <field name="name">Retenciones ISR 10%</field>
-            <field name="description">Retenciones ISR 10%</field>
+            <field name="name">Retenciones 4%</field>
+            <field name="description">Retenciones 4%</field>
             <field name="account" ref="pc_0"/>
             <field name="group" ref="tax_group_purchase"/>
             <field name="type">percentage</field>
