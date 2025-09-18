@@ -8897,14 +8897,16 @@ this repository contains the full copyright notices and license terms. -->
             <field name="type" ref="mx_02"/>
             <field name="parent" ref="pg_205_02"/>
             <field name="code">205-02-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_205_03_000">
             <field name="name">Acreedores diversos a corto plazo extr</field>
             <field name="type" ref="mx_02"/>
             <field name="parent" ref="pg_205_03"/>
             <field name="code">205-03-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_205_04_000">
             <field name="name">Acreedores div a corto plazo nal pte relac</field>
