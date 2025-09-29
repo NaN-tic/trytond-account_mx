@@ -2108,7 +2108,8 @@ this repository contains the full copyright notices and license terms. -->
             <field name="type" ref="mx_02"/>
             <field name="parent" ref="pg_251_00"/>
             <field name="code">251-00-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_252_00_000">
             <field name="name">Cuentas por pagar a largo plazo</field>
@@ -9281,42 +9282,48 @@ this repository contains the full copyright notices and license terms. -->
             <field name="type" ref="mx_02"/>
             <field name="parent" ref="pg_251_01"/>
             <field name="code">251-01-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_251_02_000">
             <field name="name">Acreedores div largo plazo nal</field>
             <field name="type" ref="mx_02"/>
             <field name="parent" ref="pg_251_02"/>
             <field name="code">251-02-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_251_03_000">
             <field name="name">Acreedores div largo plazo ext</field>
             <field name="type" ref="mx_02"/>
             <field name="parent" ref="pg_251_03"/>
             <field name="code">251-03-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_251_04_000">
             <field name="name">Acreedores div largo pzo nal pte relac</field>
             <field name="type" ref="mx_02"/>
             <field name="parent" ref="pg_251_04"/>
             <field name="code">251-04-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_251_05_000">
             <field name="name">Acreedores div lgo pzo ext pte relac</field>
             <field name="type" ref="mx_02"/>
             <field name="parent" ref="pg_251_05"/>
             <field name="code">251-05-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_251_06_000">
             <field name="name">Otros acreedores diversos lgo plzo</field>
             <field name="type" ref="mx_02"/>
             <field name="parent" ref="pg_251_06"/>
             <field name="code">251-06-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_252_01_000">
             <field name="name">Dtos banc y fin x pagar lgo pzo nal</field>
