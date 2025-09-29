@@ -2008,14 +2008,16 @@ this repository contains the full copyright notices and license terms. -->
             <field name="type" ref="mx_02"/>
             <field name="parent" ref="pg_205_00"/>
             <field name="code">205-00-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_206_00_000">
             <field name="name">Anticipo de cliente</field>
             <field name="type" ref="mx_02"/>
             <field name="parent" ref="pg_206_00"/>
             <field name="code">206-00-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_207_00_000">
             <field name="name">Impuestos trasladados</field>
@@ -8890,7 +8892,8 @@ this repository contains the full copyright notices and license terms. -->
             <field name="type" ref="mx_02"/>
             <field name="parent" ref="pg_205_01"/>
             <field name="code">205-01-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_205_02_000">
             <field name="name">Acreedores diversos a corto plazo nal</field>
@@ -8913,56 +8916,64 @@ this repository contains the full copyright notices and license terms. -->
             <field name="type" ref="mx_02"/>
             <field name="parent" ref="pg_205_04"/>
             <field name="code">205-04-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_205_05_000">
             <field name="name">Acreedores div a corto plazo ext pte relac</field>
             <field name="type" ref="mx_02"/>
             <field name="parent" ref="pg_205_05"/>
             <field name="code">205-05-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_205_06_000">
             <field name="name">Otros acreedores diversos a corto plazo</field>
             <field name="type" ref="mx_02"/>
             <field name="parent" ref="pg_205_06"/>
             <field name="code">205-06-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_206_01_000">
             <field name="name">Anticipo de cliente nacional</field>
             <field name="type" ref="mx_02"/>
             <field name="parent" ref="pg_206_01"/>
             <field name="code">206-01-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_206_02_000">
             <field name="name">Anticipo de cliente extranjero</field>
             <field name="type" ref="mx_02"/>
             <field name="parent" ref="pg_206_02"/>
             <field name="code">206-02-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_206_03_000">
             <field name="name">Anticipo de cliente nacional parte relac</field>
             <field name="type" ref="mx_02"/>
             <field name="parent" ref="pg_206_03"/>
             <field name="code">206-03-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_206_04_000">
             <field name="name">Anticipo de cliente extranjero parte relac</field>
             <field name="type" ref="mx_02"/>
             <field name="parent" ref="pg_206_04"/>
             <field name="code">206-04-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_206_05_000">
             <field name="name">Otros anticipos de clientes</field>
             <field name="type" ref="mx_02"/>
             <field name="parent" ref="pg_206_05"/>
             <field name="code">206-05-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_207_01_000">
             <field name="name">IVA trasladado</field>
