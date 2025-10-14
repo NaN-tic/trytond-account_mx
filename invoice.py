@@ -1,8 +1,9 @@
 # This file is part of Tryton.  The COPYRIGHT file at the top level of
 # this repository contains the full copyright notices and license terms.
 from trytond.pool import Pool, PoolMeta
-from trytond.model import Workflow
-
+from trytond.model import Workflow, ModelView
+from trytond.exceptions import UserError
+from trytond.i18n import gettext
 
 class Invoice(metaclass=PoolMeta):
     __name__ = 'account.invoice'
@@ -14,14 +15,19 @@ class Invoice(metaclass=PoolMeta):
         Move = pool.get('account.move')
         Line = pool.get('account.move.line')
         Configuration = pool.get('account.configuration')
-        config = Configuration(1)
-
-        account_client_tax_paid = config.account_client_tax_paid
-        account_supplier_tax_paid = config.account_supplier_tax_paid
 
         super().paid(invoices)
 
-        to_save = []
+        config = Configuration(1)
+        account_client_tax_paid = config.account_client_tax_paid
+        account_supplier_tax_paid = config.account_supplier_tax_paid
+        account_move_tax_journal = config.account_move_tax_journal
+
+        if not (account_client_tax_paid and account_supplier_tax_paid and
+                account_move_tax_journal):
+            raise UserError(
+                gettext('account_mx.msg_missing_account_move_tax_configuration'))
+        to_save_moves = []
         for invoice in invoices:
             tax_acconts = set([tax.account for tax in invoice.taxes])
             account_paid = None
@@ -32,7 +38,7 @@ class Invoice(metaclass=PoolMeta):
 
             move = Move()
             move.origin = invoice
-            move.journal = invoice.journal
+            move.journal = account_move_tax_journal
             paid_line = Line()
             paid_line.account = account_paid
             paid_line.debit = 0
@@ -50,26 +56,45 @@ class Invoice(metaclass=PoolMeta):
                 paid_line.credit += line.credit
             new_lines.append(paid_line)
             move.lines = new_lines
-            to_save.append((invoice, move))
+            to_save_moves.append(move)
 
-        if to_save:
-            moves = [move for _, move in to_save]
-            Move.save(moves)
-            Move.post(moves)
-            for invoice, move in to_save:
-                invoice.additional_moves = list(invoice.additional_moves) + [move]
-            cls.save([i for i, _ in to_save])
+        if to_save_moves:
+            Move.save(to_save_moves)
+            Move.post(to_save_moves)
+
+
+class InvoiceAccountESDepends(metaclass=PoolMeta):
+    __name__ = 'account.invoice'
 
     @classmethod
+    @ModelView.button
     @Workflow.transition('posted')
-    def post(cls, invoices):
-        was_paid = [invoice for invoice in invoices if invoice.state == 'paid']
-        super().post(invoices)
-        if was_paid:
-            pool = Pool()
-            Move = pool.get('account.move')
-            to_delete = []
-            for invoice in was_paid:
-                to_delete.extend(invoice.additional_moves)
-            if to_delete:
-                Move.delete(to_delete)
+    def unpay(cls, invoices):
+        pool = Pool()
+        Move = pool.get('account.move')
+        Configuration = pool.get('account.configuration')
+
+        super().unpay(invoices)
+
+        config = Configuration(1)
+        account_client_tax_paid = config.account_client_tax_paid
+        account_supplier_tax_paid = config.account_supplier_tax_paid
+
+        if not (account_client_tax_paid and account_supplier_tax_paid):
+            raise UserError(
+                gettext('account_mx.msg_missing_account_move_tax_configuration'))
+
+        moves = Move.search([('origin', 'in', invoices)])
+        to_delete_moves = []
+        for move in moves:
+            if move.origin.type == 'in':
+                account_paid = account_supplier_tax_paid
+            elif move.origin.type == 'out':
+                account_paid = account_client_tax_paid
+            for line in move.lines:
+                if line.account == account_paid:
+                    to_delete_moves.append(move)
+                    break
+        if moves:
+            Move.draft(moves)
+            Move.delete(moves)

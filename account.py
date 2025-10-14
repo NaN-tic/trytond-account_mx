@@ -5,11 +5,9 @@ from trytond.model import fields
 
 class Configuration(metaclass=PoolMeta):
     __name__ = 'account.configuration'
-    account_client_tax_unpaid = fields.Many2One(
-        'account.account', "Client Tax Unpaid Account")
-    account_supplier_tax_unpaid = fields.Many2One(
-        'account.account', "Supplier Tax Unpaid Account")
     account_client_tax_paid = fields.Many2One(
         'account.account', "Client Tax Paid Account")
     account_supplier_tax_paid = fields.Many2One(
         'account.account', "Supplier Tax Paid Account")
+    account_move_tax_journal = fields.Many2One(
+        'account.journal', "Account Move Tax Journal")
