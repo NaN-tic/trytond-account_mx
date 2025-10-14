@@ -1,11 +1,13 @@
-# This file is part account_mx module for Tryton.
-# The COPYRIGHT file at the top level of this repository contains
-# the full copyright notices and license terms.
-from trytond.tests.test_tryton import ModuleTestCase
+        # Create sequence type
+        sequence_type, = SequenceType.search([('name', '=', 'Account Journal')])
+        if not sequence_type:
+            sequence_type, = SequenceType.create([{
+                'name': 'Account Journal',
+                }])
 
-
-class AccountMxTestCase(ModuleTestCase):
-    'Test Account Mx module'
-    module = 'account_mx'
-
-del ModuleTestCase
+        # Create sequence
+        sequence, = SequenceStrict.create([{
+            'name': 'Account Journal',
+            'sequence_type': sequence_type.id,
+            'company': company.id,
+            }])
