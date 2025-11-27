@@ -9,14 +9,18 @@ class Invoice(metaclass=PoolMeta):
     __name__ = 'account.invoice'
 
     @classmethod
-    @Workflow.transition('paid')
     def paid(cls, invoices):
         pool = Pool()
         Move = pool.get('account.move')
         Line = pool.get('account.move.line')
         Configuration = pool.get('account.configuration')
+        Date = pool.get('ir.date')
 
         super().paid(invoices)
+        if not invoices:
+            return
+
+        date = Date.today()
 
         config = Configuration(1)
         account_client_tax_paid = config.account_client_tax_paid
@@ -27,8 +31,23 @@ class Invoice(metaclass=PoolMeta):
                 account_move_tax_journal):
             raise UserError(
                 gettext('account_mx.msg_missing_account_move_tax_configuration'))
-        to_save_moves = []
+        to_post = []
+        to_reconcile = {}
         for invoice in invoices:
+            if invoice.type == 'in':
+                account_paid = account_supplier_tax_paid
+            else: # out
+                account_paid = account_client_tax_paid
+            moves = Move.search([('origin', '=', invoice)])
+            to_continue = False
+            for move in moves:
+                for line in move.lines:
+                    if line.account == account_paid:
+                        to_continue = True
+                        break
+            if to_continue:
+                continue
+
             tax_acconts = set([tax.account for tax in invoice.taxes])
             account_paid = None
             if invoice.type == 'in':
@@ -39,28 +58,40 @@ class Invoice(metaclass=PoolMeta):
             move = Move()
             move.origin = invoice
             move.journal = account_move_tax_journal
+            move.description = invoice.rec_name
+            move.date = invoice.reconciled or date
+            move.on_change_date()
+            move.save()
+            to_post.append(move)
             paid_line = Line()
+            paid_line.move = move
             paid_line.account = account_paid
             paid_line.debit = 0
             paid_line.credit = 0
-            new_lines = []
             for line in invoice.move.lines:
                 if line.account not in tax_acconts:
                     continue
+                key = (invoice, line.account)
+                if key not in to_reconcile:
+                    to_reconcile[key] = [line]
                 unpaid_line = Line()
+                unpaid_line.move = move
                 unpaid_line.account = line.account
                 unpaid_line.debit = line.credit
                 unpaid_line.credit = line.debit
-                new_lines.append(unpaid_line)
+                unpaid_line.save()
+                to_reconcile[key].append(unpaid_line)
                 paid_line.debit += line.debit
                 paid_line.credit += line.credit
-            new_lines.append(paid_line)
-            move.lines = new_lines
-            to_save_moves.append(move)
+            paid_line.save()
 
-        if to_save_moves:
-            Move.save(to_save_moves)
-            Move.post(to_save_moves)
+        if to_post:
+            Move.post(to_post)
+
+        if to_reconcile:
+            for lines in to_reconcile.values():
+                lines = Line.browse([line.id for line in lines])
+                Line.reconcile(lines)
 
 
 class InvoiceAccountESDepends(metaclass=PoolMeta):
