@@ -1,0 +1,7 @@
+<tryton>
+    <data grouped="1">
+      <record model="ir.message" id="msg_missing_account_move_tax_configuration">
+          <field name="text">In order to properly set the account move of paid taxes, a client account, supplier account and tax journal must be set under account configuration</field>
+      </record>
+    </data>
+</tryton>
