@@ -1,0 +1,28 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:account.configuration,account_client_tax_paid:"
+msgid "Client Tax Paid Account"
+msgstr "Cuenta impuestos pagados cliente"
+
+msgctxt "field:account.configuration,account_move_tax_journal:"
+msgid "Account Move Tax Journal"
+msgstr "Diario impuestos asiento"
+
+msgctxt "field:account.configuration,account_supplier_tax_paid:"
+msgid "Supplier Tax Paid Account"
+msgstr "Cuenta  impuestos pagados proveedor"
+
+msgctxt "model:ir.message,text:msg_missing_account_move_tax_configuration"
+msgid ""
+"In order to properly set the account move of paid taxes, a client account, "
+"supplier account and tax journal must be set under account configuration"
+msgstr ""
+"Para establecer correctamente el asiento de impuestos pagados, se debe "
+"configurar una cuenta de cliente, cuenta de proveedor y diario de impuestos "
+"en la configuración de contabilidad."
+
+msgctxt "view:account.configuration:"
+msgid "Account move tax"
+msgstr "Asiento impuestos"
