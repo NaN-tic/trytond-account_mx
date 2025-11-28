@@ -14,10 +14,6 @@ def register():
     Pool.register(
         module='account_mx', type_='report')
     Pool.register(
-        invoice.InvoiceAccountESDepends,
-        depends=['account_es'],
-        module='account_mx', type_='model')
-    Pool.register(
         statement.Origin,
         depends=['account_statement_enable_banking'],
         module='account_mx', type_='model')
