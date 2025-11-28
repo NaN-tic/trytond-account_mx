@@ -26,7 +26,7 @@ class Test(unittest.TestCase):
         today = dt.date.today()
 
         # Activate modules
-        config = activate_modules(['account_mx', 'account_es'])
+        config = activate_modules(['account_mx'])
 
         # Create company
         _ = create_company()
