@@ -93,16 +93,13 @@ class Invoice(metaclass=PoolMeta):
                 lines = Line.browse([line.id for line in lines])
                 Line.reconcile(lines)
 
-
-class InvoiceAccountESDepends(metaclass=PoolMeta):
-    __name__ = 'account.invoice'
-
     @classmethod
     @ModelView.button
     @Workflow.transition('posted')
     def unpay(cls, invoices):
         pool = Pool()
         Move = pool.get('account.move')
+        Reconciliation = pool.get('account.move.reconciliation')
         Configuration = pool.get('account.configuration')
 
         super().unpay(invoices)
@@ -112,20 +109,30 @@ class InvoiceAccountESDepends(metaclass=PoolMeta):
         account_supplier_tax_paid = config.account_supplier_tax_paid
 
         if not (account_client_tax_paid and account_supplier_tax_paid):
-            raise UserError(
-                gettext('account_mx.msg_missing_account_move_tax_configuration'))
+            raise UserError(gettext(
+                    'account_mx.msg_missing_account_move_tax_configuration'))
 
         moves = Move.search([('origin', 'in', invoices)])
         to_delete_moves = []
+        reconciliations = []
         for move in moves:
             if move.origin.type == 'in':
                 account_paid = account_supplier_tax_paid
             elif move.origin.type == 'out':
                 account_paid = account_client_tax_paid
+            to_delete = False
+            reconcile = []
             for line in move.lines:
                 if line.account == account_paid:
                     to_delete_moves.append(move)
-                    break
+                    to_delete = True
+                if line.reconciliation:
+                    reconcile.append(line.reconciliation)
+            if to_delete and reconcile:
+                reconciliations.extend(reconcile)
+        if reconciliations:
+            Reconciliation.delete(reconciliations)
         if moves:
+            moves = list(set(moves))
             Move.draft(moves)
             Move.delete(moves)
