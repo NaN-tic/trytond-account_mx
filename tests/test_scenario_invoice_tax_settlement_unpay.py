@@ -154,8 +154,8 @@ class Test(unittest.TestCase):
         lines = tax_move.lines
         self.assertEqual(len(lines), 2)
 
-        # Unpay invoice
-        invoice.click('unpay')
+        # Undo payment invoice
+        invoice.click('undo_pay')
         invoice.reload()
         self.assertEqual(invoice.state, 'posted')
         tax_moves = Move.find([
