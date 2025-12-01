@@ -96,13 +96,13 @@ class Invoice(metaclass=PoolMeta):
     @classmethod
     @ModelView.button
     @Workflow.transition('posted')
-    def unpay(cls, invoices):
+    def undo_pay(cls, invoices):
         pool = Pool()
         Move = pool.get('account.move')
         Reconciliation = pool.get('account.move.reconciliation')
         Configuration = pool.get('account.configuration')
 
-        super().unpay(invoices)
+        super().undo_pay(invoices)
 
         config = Configuration(1)
         account_client_tax_paid = config.account_client_tax_paid
