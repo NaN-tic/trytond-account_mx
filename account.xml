@@ -7938,14 +7938,16 @@ this repository contains the full copyright notices and license terms. -->
             <field name="type" ref="mx_01"/>
             <field name="parent" ref="pg_120_01"/>
             <field name="code">120-01-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_120_02_000">
             <field name="name">Anticipo a proveedores extranjero</field>
             <field name="type" ref="mx_01"/>
             <field name="parent" ref="pg_120_02"/>
             <field name="code">120-02-000</field>
-            <field name="party_required" eval="False"/>
+            <field name="party_required" eval="True"/>
+            <field name="reconcile" eval="True"/>
         </record>
         <record model="account.account.template" id="pg_120_03_000">
             <field name="name">Anticipo a proveedores nacional parte relac</field>
