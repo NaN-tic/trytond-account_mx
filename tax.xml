@@ -285,6 +285,7 @@ this repository contains the full copyright notices and license terms. -->
             <field name="credit_note_account" ref="pg_209_01_000"/>
             <field name="sequence" eval="1000"/>
         </record>
+
         <record model="account.tax.template" id="iva_sop_16">
             <field name="name">IVA 16%</field>
             <field name="description">IVA 16%</field>
@@ -294,6 +295,17 @@ this repository contains the full copyright notices and license terms. -->
             <field name="rate" eval="Decimal('0.16')"/>
             <field name="invoice_account" ref="pg_119_01_000"/>
             <field name="credit_note_account" ref="pg_119_01_000"/>
+            <field name="sequence" eval="1000"/>
+        </record>
+        <record model="account.tax.template" id="iva_sop_16_fees">
+            <field name="name">IVA 16% (Comisiones)</field>
+            <field name="description">IVA 16% (Comisiones)</field>
+            <field name="account" ref="pc_0"/>
+            <field name="group" ref="tax_group_purchase"/>
+            <field name="type">percentage</field>
+            <field name="rate" eval="Decimal('0.16')"/>
+            <field name="invoice_account" ref="pg_118_01_000"/>
+            <field name="credit_note_account" ref="pg_118_01_000"/>
             <field name="sequence" eval="1000"/>
         </record>
         <record model="account.tax.template" id="iva_sop_0">
@@ -494,6 +506,35 @@ this repository contains the full copyright notices and license terms. -->
         <record model="account.tax.code.line.template" id="iva_sop_16-iva_sop_02_16-credit-tax">
             <field name="code" ref="iva_sop_02_16"/>
             <field name="tax" ref="iva_sop_16"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">tax</field>
+        </record>
+
+        <record model="account.tax.code.line.template" id="iva_sop_16_fees-iva_sop_01_16-invoice-base">
+            <field name="code" ref="iva_sop_01_16"/>
+            <field name="tax" ref="iva_sop_16_fees"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_sop_16_fees-iva_sop_01_16-credit-base">
+            <field name="code" ref="iva_sop_01_16"/>
+            <field name="tax" ref="iva_sop_16_fees"/>
+            <field name="operator">-</field>
+            <field name="type">credit</field>
+            <field name="amount">base</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_sop_16_fees-iva_sop_02_16-invoice-tax">
+            <field name="code" ref="iva_sop_02_16"/>
+            <field name="tax" ref="iva_sop_16_fees"/>
+            <field name="operator">+</field>
+            <field name="type">invoice</field>
+            <field name="amount">tax</field>
+        </record>
+        <record model="account.tax.code.line.template" id="iva_sop_16_fees-iva_sop_02_16-credit-tax">
+            <field name="code" ref="iva_sop_02_16"/>
+            <field name="tax" ref="iva_sop_16_fees"/>
             <field name="operator">-</field>
             <field name="type">credit</field>
             <field name="amount">tax</field>
