@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<form>
+  <label name="request"/>
+  <field name="request"/>
+  <label name="company"/>
+  <field name="company"/>
+  <label name="package_id"/>
+  <field name="package_id"/>
+  <label name="status"/>
+  <field name="status"/>
+  <label name="downloaded_at"/>
+  <field name="downloaded_at"/>
+  <label name="checksum"/>
+  <field name="checksum"/>
+  <label name="processed"/>
+  <field name="processed"/>
+  <label name="sat_status_code"/>
+  <field name="sat_status_code"/>
+  <label name="sat_status_message"/>
+  <field name="sat_status_message"/>
+  <label name="file"/>
+  <field name="file"/>
+  <label name="filename"/>
+  <field name="filename"/>
+</form>

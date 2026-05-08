@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<!-- This file is part account_mx module for Tryton.
+The COPYRIGHT file at the top level of this repository contains
+the full copyright notices and license terms. -->
+<tryton>
+  <data>
+    <menuitem name="SAT Mexico" parent="account.menu_account"
+      id="menu_sat_mx" sequence="90"/>
+
+    <record model="ir.ui.view" id="sat_configuration_view_form">
+      <field name="model">account.mx.sat.configuration</field>
+      <field name="type">form</field>
+      <field name="name">sat_configuration_form</field>
+    </record>
+    <record model="ir.ui.view" id="sat_configuration_view_tree">
+      <field name="model">account.mx.sat.configuration</field>
+      <field name="type">tree</field>
+      <field name="name">sat_configuration_tree</field>
+    </record>
+    <record model="ir.action.act_window" id="act_sat_configuration">
+      <field name="name">SAT Configurations</field>
+      <field name="res_model">account.mx.sat.configuration</field>
+    </record>
+    <record model="ir.action.act_window.view" id="act_sat_configuration_view1">
+      <field name="sequence" eval="10"/>
+      <field name="view" ref="sat_configuration_view_tree"/>
+      <field name="act_window" ref="act_sat_configuration"/>
+    </record>
+    <record model="ir.action.act_window.view" id="act_sat_configuration_view2">
+      <field name="sequence" eval="20"/>
+      <field name="view" ref="sat_configuration_view_form"/>
+      <field name="act_window" ref="act_sat_configuration"/>
+    </record>
+    <menuitem parent="account_mx.menu_sat_mx"
+      action="act_sat_configuration"
+      id="menu_sat_configuration" sequence="10"/>
+
+    <record model="ir.ui.view" id="sat_download_request_view_form">
+      <field name="model">account.mx.sat.download.request</field>
+      <field name="type">form</field>
+      <field name="name">sat_download_request_form</field>
+    </record>
+    <record model="ir.ui.view" id="sat_download_request_view_tree">
+      <field name="model">account.mx.sat.download.request</field>
+      <field name="type">tree</field>
+      <field name="name">sat_download_request_tree</field>
+    </record>
+    <record model="ir.action.act_window" id="act_sat_download_request">
+      <field name="name">SAT Download Requests</field>
+      <field name="res_model">account.mx.sat.download.request</field>
+    </record>
+    <record model="ir.action.act_window.view" id="act_sat_download_request_view1">
+      <field name="sequence" eval="10"/>
+      <field name="view" ref="sat_download_request_view_tree"/>
+      <field name="act_window" ref="act_sat_download_request"/>
+    </record>
+    <record model="ir.action.act_window.view" id="act_sat_download_request_view2">
+      <field name="sequence" eval="20"/>
+      <field name="view" ref="sat_download_request_view_form"/>
+      <field name="act_window" ref="act_sat_download_request"/>
+    </record>
+    <menuitem parent="account_mx.menu_sat_mx"
+      action="act_sat_download_request"
+      id="menu_sat_download_request" sequence="20"/>
+
+    <record model="ir.ui.view" id="sat_package_view_form">
+      <field name="model">account.mx.sat.package</field>
+      <field name="type">form</field>
+      <field name="name">sat_package_form</field>
+    </record>
+    <record model="ir.ui.view" id="sat_package_view_tree">
+      <field name="model">account.mx.sat.package</field>
+      <field name="type">tree</field>
+      <field name="name">sat_package_tree</field>
+    </record>
+    <record model="ir.action.act_window" id="act_sat_package">
+      <field name="name">SAT Packages</field>
+      <field name="res_model">account.mx.sat.package</field>
+    </record>
+    <record model="ir.action.act_window.view" id="act_sat_package_view1">
+      <field name="sequence" eval="10"/>
+      <field name="view" ref="sat_package_view_tree"/>
+      <field name="act_window" ref="act_sat_package"/>
+    </record>
+    <record model="ir.action.act_window.view" id="act_sat_package_view2">
+      <field name="sequence" eval="20"/>
+      <field name="view" ref="sat_package_view_form"/>
+      <field name="act_window" ref="act_sat_package"/>
+    </record>
+    <menuitem parent="account_mx.menu_sat_mx"
+      action="act_sat_package"
+      id="menu_sat_package" sequence="30"/>
+
+    <record model="ir.model.button" id="sat_configuration_test_authentication_button">
+      <field name="name">test_authentication</field>
+      <field name="string">Test Authentication</field>
+      <field name="model">account.mx.sat.configuration</field>
+    </record>
+    <record model="ir.model.button-res.group"
+      id="sat_configuration_test_authentication_group_account_admin">
+      <field name="button" ref="sat_configuration_test_authentication_button"/>
+      <field name="group" ref="account.group_account_admin"/>
+    </record>
+
+    <record model="ir.model.button" id="sat_download_request_send_button">
+      <field name="name">send_to_sat</field>
+      <field name="string">Send to SAT</field>
+      <field name="model">account.mx.sat.download.request</field>
+    </record>
+    <record model="ir.model.button-res.group"
+      id="sat_download_request_send_group_account">
+      <field name="button" ref="sat_download_request_send_button"/>
+      <field name="group" ref="account.group_account"/>
+    </record>
+
+    <record model="ir.model.button" id="sat_download_request_verify_button">
+      <field name="name">verify_in_sat</field>
+      <field name="string">Verify in SAT</field>
+      <field name="model">account.mx.sat.download.request</field>
+    </record>
+    <record model="ir.model.button-res.group"
+      id="sat_download_request_verify_group_account">
+      <field name="button" ref="sat_download_request_verify_button"/>
+      <field name="group" ref="account.group_account"/>
+    </record>
+
+    <record model="ir.model.button" id="sat_download_request_download_button">
+      <field name="name">download_sat_packages</field>
+      <field name="string">Download Packages</field>
+      <field name="model">account.mx.sat.download.request</field>
+    </record>
+    <record model="ir.model.button-res.group"
+      id="sat_download_request_download_group_account">
+      <field name="button" ref="sat_download_request_download_button"/>
+      <field name="group" ref="account.group_account"/>
+    </record>
+
+    <record model="ir.model.access" id="access_sat_configuration">
+      <field name="model">account.mx.sat.configuration</field>
+      <field name="perm_read" eval="True"/>
+      <field name="perm_write" eval="False"/>
+      <field name="perm_create" eval="False"/>
+      <field name="perm_delete" eval="False"/>
+    </record>
+    <record model="ir.model.access" id="access_sat_configuration_admin">
+      <field name="model">account.mx.sat.configuration</field>
+      <field name="group" ref="account.group_account_admin"/>
+      <field name="perm_read" eval="True"/>
+      <field name="perm_write" eval="True"/>
+      <field name="perm_create" eval="True"/>
+      <field name="perm_delete" eval="True"/>
+    </record>
+    <record model="ir.model.access" id="access_sat_download_request">
+      <field name="model">account.mx.sat.download.request</field>
+      <field name="perm_read" eval="True"/>
+      <field name="perm_write" eval="False"/>
+      <field name="perm_create" eval="False"/>
+      <field name="perm_delete" eval="False"/>
+    </record>
+    <record model="ir.model.access" id="access_sat_download_request_account">
+      <field name="model">account.mx.sat.download.request</field>
+      <field name="group" ref="account.group_account"/>
+      <field name="perm_read" eval="True"/>
+      <field name="perm_write" eval="True"/>
+      <field name="perm_create" eval="True"/>
+      <field name="perm_delete" eval="True"/>
+    </record>
+    <record model="ir.model.access" id="access_sat_package">
+      <field name="model">account.mx.sat.package</field>
+      <field name="perm_read" eval="True"/>
+      <field name="perm_write" eval="False"/>
+      <field name="perm_create" eval="False"/>
+      <field name="perm_delete" eval="False"/>
+    </record>
+    <record model="ir.model.access" id="access_sat_package_account">
+      <field name="model">account.mx.sat.package</field>
+      <field name="group" ref="account.group_account"/>
+      <field name="perm_read" eval="True"/>
+      <field name="perm_write" eval="True"/>
+      <field name="perm_create" eval="True"/>
+      <field name="perm_delete" eval="True"/>
+    </record>
+  </data>
+</tryton>

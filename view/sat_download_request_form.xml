@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<form>
+  <label name="company"/>
+  <field name="company"/>
+  <label name="request_type"/>
+  <field name="request_type"/>
+  <label name="download_type"/>
+  <field name="download_type"/>
+  <label name="rfc_solicitante"/>
+  <field name="rfc_solicitante"/>
+  <label name="date_from"/>
+  <field name="date_from"/>
+  <label name="date_to"/>
+  <field name="date_to"/>
+  <label name="rfc_emisor"/>
+  <field name="rfc_emisor"/>
+  <label name="rfc_receptor"/>
+  <field name="rfc_receptor"/>
+  <label name="rfc_a_cuenta_terceros"/>
+  <field name="rfc_a_cuenta_terceros"/>
+  <label name="tipo_comprobante"/>
+  <field name="tipo_comprobante"/>
+  <label name="estado_comprobante"/>
+  <field name="estado_comprobante"/>
+  <label name="complemento"/>
+  <field name="complemento"/>
+  <label name="folio"/>
+  <field name="folio"/>
+  <separator string="SAT Result" id="sat_result" colspan="4"/>
+  <label name="sat_request_id"/>
+  <field name="sat_request_id"/>
+  <label name="sat_status_code"/>
+  <field name="sat_status_code"/>
+  <label name="sat_status_message"/>
+  <field name="sat_status_message"/>
+  <label name="sat_request_state"/>
+  <field name="sat_request_state"/>
+  <label name="sat_request_state_code"/>
+  <field name="sat_request_state_code"/>
+  <label name="num_cfdis"/>
+  <field name="num_cfdis"/>
+  <label name="created_at"/>
+  <field name="created_at"/>
+  <label name="last_check_at"/>
+  <field name="last_check_at"/>
+  <notebook colspan="4">
+    <page string="Packages" id="packages">
+      <field name="packages"/>
+    </page>
+  </notebook>
+  <button name="send_to_sat"/>
+  <button name="verify_in_sat"/>
+  <button name="download_sat_packages"/>
+</form>

@@ -2,12 +2,15 @@
 # The COPYRIGHT file at the top level of this repository contains
 # the full copyright notices and license terms.
 from trytond.pool import Pool
-from . import account, invoice, statement
+from . import account, invoice, sat, statement
 
 def register():
     Pool.register(
         account.Configuration,
         invoice.Invoice,
+        sat.SATConfiguration,
+        sat.SATDownloadRequest,
+        sat.SATPackage,
         module='account_mx', type_='model')
     Pool.register(
         module='account_mx', type_='wizard')

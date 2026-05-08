@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<form>
+  <label name="company"/>
+  <field name="company"/>
+  <label name="active"/>
+  <field name="active"/>
+  <label name="rfc"/>
+  <field name="rfc"/>
+  <label name="certificate"/>
+  <field name="certificate"/>
+  <label name="last_authentication"/>
+  <field name="last_authentication"/>
+  <separator string="Services" id="services" colspan="4"/>
+  <label name="auth_url"/>
+  <field name="auth_url"/>
+  <label name="request_url"/>
+  <field name="request_url"/>
+  <label name="verify_url"/>
+  <field name="verify_url"/>
+  <label name="download_url"/>
+  <field name="download_url"/>
+  <button name="test_authentication" colspan="4"/>
+</form>

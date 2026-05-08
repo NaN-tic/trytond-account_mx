@@ -3,5 +3,14 @@
       <record model="ir.message" id="msg_missing_account_move_tax_configuration">
           <field name="text">In order to properly set the account move of paid taxes, a client account, supplier account and tax journal must be set under account configuration</field>
       </record>
+      <record model="ir.message" id="msg_sat_missing_configuration">
+          <field name="text">No active SAT configuration was found for this company.</field>
+      </record>
+      <record model="ir.message" id="msg_sat_service_error">
+          <field name="text">SAT service error: %(message)s</field>
+      </record>
+      <record model="ir.message" id="msg_sat_missing_request_id">
+          <field name="text">The SAT request must have an IdSolicitud before it can be verified.</field>
+      </record>
     </data>
 </tryton>

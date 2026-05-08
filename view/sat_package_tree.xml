@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<tree>
+  <field name="package_id"/>
+  <field name="status"/>
+  <field name="checksum"/>
+  <field name="processed"/>
+</tree>

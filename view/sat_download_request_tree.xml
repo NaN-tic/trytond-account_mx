@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<tree>
+  <field name="request_type"/>
+  <field name="download_type"/>
+  <field name="rfc_solicitante"/>
+  <field name="sat_request_id"/>
+  <field name="sat_status_code"/>
+  <field name="sat_request_state"/>
+</tree>
