@@ -15,5 +15,5 @@ def register():
         module='account_mx', type_='report')
     Pool.register(
         statement.Origin,
-        depends=['account_statement_enable_banking'],
+        depends=['account_statement_common'],
         module='account_mx', type_='model')
